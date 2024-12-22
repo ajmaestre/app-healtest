@@ -1,0 +1,36 @@
+
+<div [class]="page">
+    <form [class]="pageAdd">
+        <div class="div-header-form">
+            <h4>Eliminar</h4>
+        </div>
+        <div class="div-first-data">
+            <div class="div-project-image">
+                <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" viewBox="220 0 350 242" style="enable-background:new 0 0 812 812;" xml:space="preserve">
+                    <g id="_x31_8_Homework_Help">
+                        <g>
+                            <path d="M500.913,103.926c-3.269-49.992-43.455-89.938-93.495-92.918c-27.88-1.634-54.318,7.931-74.507,26.967    c-20.237,19.083-31.341,44.897-31.341,72.681c0,19.372,5.528,38.071,16.007,54.222l-22.449,43.551    c-2.019,3.798-1.298,8.268,1.73,11.345c1.923,1.923,4.374,2.884,6.874,2.884c1.538,0,3.076-0.337,4.519-1.105l45.281-23.314    c14.565,7.98,31.053,12.21,47.829,12.21c27.496,0,54.03-11.537,72.825-31.63c17.497-18.651,26.967-42.541,26.967-67.97    C501.154,108.541,501.058,106.234,500.913,103.926z M406.272,156.299c0,2.657-2.15,4.807-4.807,4.807    c-2.657,0-4.807-2.15-4.807-4.807v-3.018c0-2.657,2.15-4.807,4.807-4.807c2.657,0,4.807,2.15,4.807,4.807V156.299z     M406.272,116.013v14.726c0,2.657-2.15,4.807-4.807,4.807c-2.657,0-4.807-2.15-4.807-4.807v-19.115    c0-2.657,2.15-4.807,4.807-4.807c9.952,0,18.045-8.093,18.045-18.04c0-9.952-8.093-18.045-18.045-18.045    c-9.947,0-18.04,8.093-18.04,18.045c0,2.657-2.15,4.807-4.807,4.807c-2.657,0-4.807-2.15-4.807-4.807    c0-15.252,12.407-27.659,27.654-27.659c15.252,0,27.659,12.407,27.659,27.659C429.124,102.385,419.237,113.731,406.272,116.013z"/>
+                        </g>
+                    </g>
+                    <g id="Layer_1"/>
+                </svg>
+            </div>
+            <label for="">
+                ¿Está seguro de querer eliminar este elemento?
+            </label>
+        </div>
+
+        <div [class]="divWarning" id="div-warning">
+            <label id="warning">{{message}}</label>
+        </div>
+        <hr class="hr">
+
+        <div class="group-button">
+            <div class="div-btn div-btn-next">
+                <input class="btn-next btn-prev" type="button" value="Cancelar" (click)="closeModal()">
+                <input class="btn-next" type="button" value="Eliminar" (click)="delete()">
+            </div>
+        </div>
+    </form>
+</div>
+
