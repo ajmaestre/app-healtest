@@ -1,0 +1,130 @@
+
+.div-container{
+    position: fixed;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: row;
+    width: 100vw;
+}
+
+.div-image{
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: inherit;
+    width: 25vw;
+    height: 100vh;
+    background-color: #242932;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+}
+
+.div-header{
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    flex-direction: row;
+    width: inherit;
+    height: 25%;
+    padding-left: 1rem;
+}
+
+.div-header svg{
+    fill: #cca358;
+    width: 4.5rem;
+    height: 4.5rem;
+    margin-right: 1rem;
+}
+
+.div-header h4{
+    font-weight: bold;
+    color: #cca358;
+    font-size: .9rem;
+    margin: .2rem 0;
+    width: 100%;
+    text-align: left;
+}
+
+.groupTitle{
+    width: 95%;
+    height: auto;
+    margin: .5rem 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+
+.groupTitle .h4{
+    width: 100%;
+    margin: .2rem 0;
+    text-align: left;
+    font-size: .8rem;
+    color: rgb(204, 163, 88);
+}
+
+.div-header #emails{
+    font-size: .7rem;
+}
+
+.div-header h2{
+    font-weight: bold;
+    color: rgb(204, 163, 88);
+    font-size: 1.2rem;
+    padding: 0;
+    margin-bottom: .4rem;
+    width: 100%;
+    text-align: left;
+}
+
+.nav{
+    display: flex;
+    justify-content: center;
+    width: inherit;
+    height: auto;
+    padding-left: 1rem;
+    margin: 1.5rem 0;
+}
+
+.nav ul{
+    color: white;
+    width: 100%;
+}
+
+.nav ul li{
+    list-style: none;
+    margin: 1rem 0;
+    width: inherit;
+}
+
+.nav ul li .div-info {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    text-decoration: none;
+    cursor: pointer;
+    transition: .5s;
+    background: transparent;
+    margin: 0 .5rem;
+    color: white;
+    font-size: .7rem;
+}
+
+.nav ul li .div-info:hover{
+    color: rgb(204, 163, 88);
+}
+
+li .div-info .h4{
+    font-size: .8rem;
+    width: auto;
+}
+
+li .div-info span{
+    font-size: .8rem;
+    width: auto;
+    margin: 0 2rem;
+}
