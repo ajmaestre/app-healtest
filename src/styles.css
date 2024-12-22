@@ -1,1 +1,106 @@
 /* You can add global styles to this file, and also import other style files */
+
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300;700&display=swap');
+
+*{
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+    font-family: 'Roboto', Verdana, Geneva, Tahoma, sans-serif;
+}
+
+body{
+    padding: 0;
+    margin: 0;
+}
+
+p{
+    font-size: 1.05rem;
+}
+
+@keyframes login {
+    0%{
+        transform: scale(.1);
+    }
+    10%{
+        transform: scale(.3);
+    }
+    20%{
+        transform: scale(.5);
+    }
+    30%{
+        transform: scale(.7);
+    }
+    40%{
+        transform: scale(.9);
+    }
+    50%{
+        transform: scale(1);
+    }
+}
+
+@keyframes logout {
+    0%{
+        transform: scale(1);
+    }
+    10%{
+        transform: scale(.9);
+    }
+    20%{
+        transform: scale(.7);
+    }
+    30%{
+        transform: scale(.5);
+    }
+    40%{
+        transform: scale(.3);
+    }
+    50%{
+        transform: scale(.1);
+    }
+}
+
+@media screen and (max-width: 320px) {
+
+    .container{
+        margin: 0;
+        padding: 0;
+    }
+    
+}
+
+@media screen and (max-width: 480px) {
+
+    .container{
+        margin: 0;
+        padding: 0;
+    }
+    
+}
+
+@media screen and (max-width: 768px) {
+
+    .container{
+        margin: 0;
+        padding: 0;
+    }
+    
+}
+
+@media screen and (max-width: 960px) {
+
+    .container{
+        margin: 0;
+        padding: 0;
+    }
+    
+}
+
+@media screen and (max-width: 1024px) {
+
+    body{
+        padding: 0;
+        margin: 0;
+    }
+    
+}
