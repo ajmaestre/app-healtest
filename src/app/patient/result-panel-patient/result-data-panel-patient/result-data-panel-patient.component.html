@@ -1,0 +1,164 @@
+<div [class]="page">
+    <div [class]="pageAdd">
+
+        <div class="container-data">
+            <div class="data info">
+
+                <div class="div-header-form">
+                    <h4>Datos del paciente</h4>
+                </div>
+    
+                <div class="div-sep">
+                    <hr class="sep">
+                </div>
+    
+                <div class="div-first-data">
+                    <div class="test-data patient-data">
+                        <option class="input">
+                            <span class="span">Paciente: </span>
+                            <span class="span">{{userData.name}} {{userData.lastname}}</span>
+                        </option>
+                        <option class="input">
+                            <span class="span">Correo electrónico: </span>
+                            <span class="span">{{userData.email}}</span>
+                        </option>
+                        <option class="input">
+                            <span class="span">Grupo: </span>
+                            <span class="span">{{userData.groups?.at(0)?.name}}</span>
+                        </option>
+                        <option class="input">
+                            <span class="span">Monitor: </span>
+                            <span class="span">{{userData.monitor}}</span>
+                        </option>
+                    </div>
+                </div>
+
+                <div class="div-header-form">
+                    <h4>Datos de la evaluación</h4>
+                </div>
+ 
+                <div class="div-sep"> 
+                    <hr class="sep">
+                </div>
+
+                <div class="div-first-data">
+                    <div class="test-data">
+                        <option class="input"><span class="span">Nombre:</span> {{dataTest.name}}</option>
+                        <option class="input"><span class="span">Preguntas:</span> {{dataTest.questions?.length}}</option>
+                        <option class="input"><span class="span">Inicio:</span> {{getDateInit()}}</option>
+                        <option class="input"><span class="span">Fin:</span> {{getDateEnd()}}</option>
+                        <option class="input"><span class="span">Estado:</span> {{dataTest.state}}</option>
+                        <option class="input"><span class="span">Terminada:</span> </option>
+                    </div>
+                </div>
+    
+            </div>
+    
+            <div class="data">
+                <div class="div-header-form">
+                    <h4>Resultado del examen</h4>
+                    <div class="div-icon">
+                        <a type="button" (click)="closeModal()">
+                            <svg version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg"
+                                xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 212.982 212.982"
+                                style="enable-background:new 0 0 212.982 212.982;" xml:space="preserve">
+                                <g id="Close">
+                                    <path style="fill-rule:evenodd;clip-rule:evenodd;" d="M131.804,106.491l75.936-75.936c6.99-6.99,6.99-18.323,0-25.312
+                c-6.99-6.99-18.322-6.99-25.312,0l-75.937,75.937L30.554,5.242c-6.99-6.99-18.322-6.99-25.312,0c-6.989,6.99-6.989,18.323,0,25.312
+                l75.937,75.936L5.242,182.427c-6.989,6.99-6.989,18.323,0,25.312c6.99,6.99,18.322,6.99,25.312,0l75.937-75.937l75.937,75.937
+                c6.989,6.99,18.322,6.99,25.312,0c6.99-6.99,6.99-18.322,0-25.312L131.804,106.491z" />
+                                </g>
+                                <g></g>
+                                <g></g>
+                                <g></g>
+                                <g></g>
+                                <g></g>
+                                <g></g>
+                                <g></g>
+                                <g></g>
+                                <g></g>
+                                <g></g>
+                                <g></g>
+                                <g></g>
+                                <g></g>
+                                <g></g>
+                                <g></g>
+                            </svg>
+                        </a>
+                    </div>
+                </div>
+                <div class="div-sep">
+                    <hr class="sep">
+                </div> 
+                <div class="header">
+                    <div class="list-btn">
+                        <a class="links circle" type="button" *ngIf="!index"><span class="circle">0</span></a>
+                        <a class="links" type="button" *ngIf="index" (click)="selectPageQuest(index-1)"><span>{{index}}</span></a>
+                        <a class="links show-selected" type="button" (click)="selectPageQuest(index)"><span>{{index+1}}</span></a>
+                        <a class="links" type="button" *ngIf="!(index+2>listQuestInTest.length)" (click)="selectPageQuest(index+1)"><span>{{index+2}}</span></a>
+                        <a class="links circle" type="button" *ngIf="(index+2>listQuestInTest.length)"><span class="circle">0</span></a>
+                    </div>
+                </div>
+                <div class="div-sep">
+                    <hr class="sep">
+                </div> 
+                <div class="body" *ngIf="listQuestInTest.length">
+                    <div class="photo">
+                        <img [src]="questSelected?.image" class="img" alt="Sin Imagen">
+                    </div>
+                    <div class="div-question">
+                        <div class="page-login">
+            
+                            <div class="div-first-data">
+                                <div class="div-header-form">
+                                    <h4>{{questSelected?.question}}</h4>
+                                </div>
+                                <div class="div-sep">
+                                    <hr class="sep">
+                                </div>
+                                <div class="input answers">
+                                    <option *ngFor="let option of questSelected?.options" [class]="isSelected(questSelected, option)" value="option.id">{{option.option}}</option>
+                                </div>
+                            </div>
+            
+                        </div>
+                    </div>
+                </div>
+
+                <div class="div-btn-pagination" *ngIf="isPages()">
+                    <a type="button" class="arrow left" (click)="prePageQuest()">
+                        <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1"
+                            viewBox="240 150 100 50" style="enable-background:new 240 150 100 50;" xml:space="preserve">
+                            <g id="_x32_6_Career_Advancement">
+                                <g>
+                                    <g>
+                                        <path
+                                            d="M266.936,117.248c-1.874-1.875-1.874-4.951,0-6.826l18.891-18.843l0.433-0.432c0.122-0.125,0.292-0.174,0.426-0.282     c0.348-0.284,0.682-0.553,1.102-0.729c0.082-0.033,0.172-0.031,0.256-0.06c0.508-0.18,1.016-0.371,1.582-0.371     c1.346,0,2.548,0.577,3.413,1.442l0.192,0.192l19.083,19.084c1.923,1.874,1.923,4.951,0,6.826     c-0.913,0.913-2.163,1.394-3.365,1.394c-1.25,0-2.451-0.481-3.413-1.394l-11.104-11.104v81.237c0,2.692-2.163,4.807-4.807,4.807     c-2.644,0-4.807-2.115-4.807-4.807v-81.237l-11.104,11.104C271.839,119.123,268.81,119.123,266.936,117.248z" />
+                                    </g>
+                                </g>
+                            </g>
+                            <g id="Layer_1" />
+                        </svg>
+                    </a>
+                    <a type="button" class="arrow right" (click)="nextPageQuest()">
+                        <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1"
+                            viewBox="240 150 100 50" style="enable-background:new 240 150 100 50;" xml:space="preserve">
+                            <g id="_x32_6_Career_Advancement">
+                                <g>
+                                    <g>
+                                        <path
+                                            d="M266.936,117.248c-1.874-1.875-1.874-4.951,0-6.826l18.891-18.843l0.433-0.432c0.122-0.125,0.292-0.174,0.426-0.282     c0.348-0.284,0.682-0.553,1.102-0.729c0.082-0.033,0.172-0.031,0.256-0.06c0.508-0.18,1.016-0.371,1.582-0.371     c1.346,0,2.548,0.577,3.413,1.442l0.192,0.192l19.083,19.084c1.923,1.874,1.923,4.951,0,6.826     c-0.913,0.913-2.163,1.394-3.365,1.394c-1.25,0-2.451-0.481-3.413-1.394l-11.104-11.104v81.237c0,2.692-2.163,4.807-4.807,4.807     c-2.644,0-4.807-2.115-4.807-4.807v-81.237l-11.104,11.104C271.839,119.123,268.81,119.123,266.936,117.248z" />
+                                    </g>
+                                </g>
+                            </g>
+                            <g id="Layer_1" />
+                        </svg>
+                    </a>
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+</div>

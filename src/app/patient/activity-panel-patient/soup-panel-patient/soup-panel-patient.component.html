@@ -1,0 +1,37 @@
+<div class="data-activity">
+    <div class="input"><span>Nombre:</span> <span>{{dataSended.name}}</span></div>
+    <div class="input"><span>Fecha de creación:</span> <span>{{getDate(dataSended)}}</span></div>
+    <div class="input"><span>Estado:</span> <span>{{dataSended.state}}</span></div>
+</div>
+
+<div class="div-first-data">
+    <div class="div-btn-panel">
+        <div class="div-btn-table">
+            <div *ngFor="let cells of numberCells; let i = index" class="div-list-cell">
+                <option [class]="getInput(i)" value="i" (click)="selectCell(i)">{{cells}}</option>
+            </div>
+        </div>
+    </div>
+    <div class="div-btn-panel questions">
+        <div class="div-vertical">
+            <h4 class="h4">Lista de Palabras</h4>
+            <div class="group-btn" *ngFor="let word of listWord; let i = index">
+                <label for="">{{i+1}}.</label>
+                <option [class]="getInputWord(word)" value="i">{{word.question}}</option>
+            </div>
+        </div>
+    </div>
+</div>
+
+<hr class="hr">
+
+<div [class]="divWarning" id="div-warning">
+    <label id="warning">{{message}}</label>
+</div>
+
+<div class="group-button">
+    <div class="div-btn div-btn-next">
+        <input class="btn-next btn-prev" type="button" value="Restablecer" (click)="clearTable()">
+        <input class="btn-next" type="button" value="Registrar" (click)="sendData()">
+    </div>
+</div>

@@ -1,0 +1,55 @@
+
+.page{
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    flex-direction: column;
+    margin: 0;
+    padding-top: 1.5rem;
+    padding-bottom: 1.5rem;
+    width: 52rem;
+    height: 100vh;
+}
+
+.div-header-form{
+    display: flex;
+    align-items: flex-start;
+    justify-content: center;
+    flex-direction: column;
+    width: 100%;
+    color: #242932;
+}
+
+.div-header-form h4{
+    font-weight: bold;
+    color: rgb(51, 51, 51);
+    font-size: 1rem;
+    padding: 1rem 0;
+    width: 100%;
+    text-align: left;
+}
+
+.div-header-form h2{
+    font-weight: bold;
+    color: rgb(51, 51, 51);
+    font-size: 1.5rem;
+    padding: 1.5rem 0;
+    width: 100%;
+    text-align: left;
+}
+
+.video{
+    width: 40rem;
+    height: 22rem;
+    margin: .5rem 0;
+}
+
+.div-home .div-header-form{
+    color: #242932;
+}
+
+.div-home .div-text-body p{
+    color: #242932;
+    line-height: 1.5rem;
+    font-weight: 500;
+}

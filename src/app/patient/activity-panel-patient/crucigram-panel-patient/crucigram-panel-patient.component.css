@@ -1,0 +1,368 @@
+
+.div-header-form{
+    display: flex;
+    align-items: flex-start;
+    justify-content: center;
+    flex-direction: column;
+    width: 100%;
+    color: #242932;
+}
+
+.div-header-form h4{
+    font-weight: bold;
+    color: rgb(51, 51, 51);
+    font-size: 1rem;
+    padding: 0;
+    width: auto;
+    text-align: left;
+}
+
+.div-first-data{
+    margin-top: .5rem;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: row;
+    flex-wrap: wrap;
+}
+
+.div-btn-panel{
+    width: 40%;
+    height: auto;
+    display: flex;
+    align-items: flex-end;
+    justify-content: flex-start;
+    flex-direction: row;
+    margin: 1.5rem .5rem;
+}
+
+.questions{
+    width: 50%;
+}
+
+.div-vertical{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    width: 50%;
+}
+
+.div-horizontal{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    width: 50%;
+}
+
+.h4{
+    width: 95%;
+    height: 2rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.group-btn{
+    width: 95%;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    flex-direction: row;
+    margin: 0 .5rem;
+}
+
+.group-btn label{
+    font-size: 1rem;
+    width: 2.5rem;
+    text-align: center;
+    font-weight: bold;
+}
+
+.group-btn .div-btn{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: row;
+    width: auto;
+    height: auto;
+    padding: 0;
+}
+
+.group-btn .div-btn a{
+    cursor: pointer;
+    transition: .5s;
+    margin: 0;
+    padding: 0;
+    border: .1rem solid #242932;
+    border-radius: .2rem;
+}
+
+.group-btn .div-btn a svg{
+    fill: #242932;
+    width: 2rem;
+    height: 2rem;
+    margin: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: .5s;
+}
+
+.group-btn .div-btn a:hover{
+    border: .1rem solid rgb(204, 163, 88);
+}
+
+.group-btn .div-btn a:hover svg{
+    fill: rgb(204, 163, 88);
+}
+
+.div-btn-table{
+    width: 20rem;
+    height: auto;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: row;
+    flex-wrap: wrap;
+}
+
+.div-list-cell{
+    width: auto;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: row;
+}
+
+.div-list-line{
+    width: auto;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: row;
+    flex-wrap: wrap;
+}
+
+.input{
+    width: 2rem;
+    height: 2rem;
+    margin: 0;
+    padding: 0;
+    font-size: 1rem;
+    border: .1rem solid rgb(20, 20, 20);
+    color: rgb(20, 20, 20);
+    text-transform: uppercase;
+    text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.list-num{
+    background-color: rgb(204, 163, 88);
+    font-weight: bold;
+}
+
+.filled{
+    background-color: rgb(20, 20, 20);
+}
+
+.filled-bad{
+    background-color: rgb(200, 100, 90);
+}
+
+.questions .input{
+    width: 100%;
+    height: 2rem;
+    font-size: .9rem;
+    padding: .2rem .5rem;
+    margin: 0 .2rem;
+    border: .1rem solid rgb(197, 197, 197);
+    overflow: hidden;
+    text-transform: none;
+    text-align: left;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+}
+
+.data-activity{
+    width: 100%;
+    margin-top: 1rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    flex-direction: row;
+}
+
+.data-activity .input{
+    width: 30%;
+    height: 2.2rem;
+    margin: 0;
+    padding: 0 .5rem;
+    border: .1rem solid rgb(197, 197, 197);
+    border-radius: .2rem;
+    font-size: .9rem;
+    text-transform: none;
+    font-weight: bold;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.id-hide{
+    display: none;
+}
+
+.hr{
+    width: 100%;
+    margin: .5rem 0;
+    border: .1rem solid rgb(228, 227, 227);
+}
+
+.group-button{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    width: 100%;
+}
+
+.div-btn{
+    display: flex;
+    align-items: flex-end;
+    justify-content: flex-end;
+    flex-direction: row;
+    width: inherit;
+}
+
+.btn-next{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 10rem;
+    height: 2.4rem;
+    margin-top: .5rem;
+    padding: 0 2rem;
+    border: .1rem solid rgb(0, 0, 0);
+    background: #242932;;
+    color: white;
+    font-weight: bold;
+    font-size: .8rem;
+    border-radius: .2rem;
+    text-decoration: none;
+    text-align: center;
+    transition: .5s;
+}
+
+.btn-prev{
+    border: .1rem solid rgb(236, 236, 236);
+    background: rgb(236, 236, 236);
+    color: rgb(158, 158, 158);
+    margin-right: 1rem;
+}
+
+.btn-next:hover{
+    cursor: pointer;
+    color: #242932;
+    background-color: rgb(204, 163, 88);
+    border: .1rem solid rgb(204, 163, 88);
+}
+
+.btn-prev:hover{
+    cursor: pointer;
+    color: black;
+    background-color: rgb(204, 163, 88);
+    border: .1rem solid rgb(204, 163, 88);
+}
+
+.div-warning{
+    width: 100%;
+    display: none;
+    align-items: center;
+    justify-content: center;
+}
+
+#warning{
+    font-size: .8rem;
+    color: red;
+}
+
+/* --------------------------------------------------------------------------------------- */
+
+.div-form-cell{
+    position: fixed;
+    width: 100vw;
+    height: 100vh;
+    top: 0;
+    left: 0;
+    display: none;
+    align-items: center;
+    justify-content: center;
+    background: rgba(15, 15, 15, 0.6);
+}
+
+.data-cells{
+    animation: login .5s linear 0s;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    margin: 0;
+    width: 40rem;
+    height: auto;
+    padding: 1.5rem 2rem;
+    background-color: rgb(255, 255, 255);
+    border: .1rem solid rgb(233, 231, 231);
+    border-radius: .2rem;
+    box-shadow: .3rem .3rem .3rem rgb(233, 231, 231);
+}
+
+.data-cells .div-first-data{
+    justify-content: space-between;
+}
+
+.data-cells .div-first-data .div-list-cell{
+    justify-content: space-between;
+}
+
+.data-cells .div-first-data .group-btn{
+    width: 22rem;
+    justify-content: space-between;
+}
+
+.data-cells .div-first-data .group-btn .div-btn a{
+    padding: .2rem;
+    border: .15rem solid #242932;
+    border-radius: .2rem;
+}
+
+.data-cells .div-first-data .group-btn .div-btn a svg{
+    width: 1.4rem;
+    height: 1.4rem;
+}
+
+.data-cells .div-first-data .group-btn .large{
+    width: 100%;
+    font-size: .9rem;
+    text-transform: none;
+}
+
+.data-cells .div-first-data label{
+    font-size: .9rem;
+}
+
+.page-out{
+    animation: logout 1s linear 0s;
+}
+
+.show{
+    display: flex;
+}
+
+.hide{
+    display: none;
+}
