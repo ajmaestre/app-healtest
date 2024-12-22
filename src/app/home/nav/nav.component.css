@@ -1,0 +1,132 @@
+
+.div-container{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: row;
+    width: 100vw;
+}
+
+.div-image{
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: inherit;
+    width: inherit;
+    height: 5rem;
+    padding: 0 5rem;
+    background-color: #242932;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+}
+
+.div-header{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    width: 15rem;
+    height: 45%;
+}
+
+.div-header h2{
+    font-weight: bold;
+    color: rgb(204, 163, 88);
+    font-size: 2rem;
+    padding-bottom: 0;
+    width: 100%;
+    text-align: left;
+}
+
+.nav{
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    width: inherit;
+    height: 45%;
+}
+
+.nav ul{
+    color: white;
+    width: 100%;
+    padding: 0 5rem;
+    display: flex;
+    justify-content: center;
+    flex-direction: row;
+}
+
+.nav ul li{
+    list-style: none;
+    margin: 1rem .5rem;
+}
+
+.div-login{
+    height: auto;
+    width: 10rem;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+}
+
+.nav a {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-decoration: none;
+    cursor: pointer;
+    transition: .5s;
+    background: transparent;
+    margin: 0 .5rem;
+    color: white;
+    font-size: .8rem;
+    font-weight: bold;
+    text-transform: uppercase;
+    width: 10rem;
+    height: 2.4rem;
+}
+
+.div-login a{
+    margin: .5rem 0;
+    padding: 0 2rem;
+    border: .12rem solid rgb(204, 163, 88);
+    color: rgb(204, 163, 88);
+    background: #242932;;
+    border-radius: .2rem;
+    text-align: center;
+}
+
+.nav ul li a hr{
+    width: 5rem;
+    height: 0;
+    margin-top: .2rem;
+    border: .01rem solid white;
+    transition: .5s;
+}
+
+.nav ul li .active{
+    color: rgb(204, 163, 88);
+}
+
+.nav ul li .active hr{
+    border: .01rem solid rgb(204, 163, 88);
+    width: 10rem;
+}
+
+.nav a:hover{
+    color: rgb(204, 163, 88);
+}
+
+.nav ul li a:hover hr{
+    border: .01rem solid rgb(204, 163, 88);
+    width: 10rem;
+}
+
+.div-login a:hover{
+    cursor: pointer;
+    color: #242932;
+    background-color: rgb(204, 163, 88);
+    border: .1rem solid rgb(204, 163, 88);
+}

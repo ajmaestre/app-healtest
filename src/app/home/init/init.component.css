@@ -1,0 +1,114 @@
+
+.page{
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    flex-direction: row;
+    margin: 0;
+    height: 100vh;
+    padding: 5rem;
+}
+
+.div-text-card{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    width: 40%;
+}
+
+.div-home .div-header-form{
+    color: #242932;
+}
+
+.div-home .div-text-body p{
+    color: #242932;
+    line-height: 1.5rem;
+    font-weight: 500;
+}
+
+.div-home .div-button{
+    position: relative;
+    width: 100%;
+    height: 6rem;
+    border: .1rem solid rgb(233, 231, 231);
+    margin-top: 2rem;
+    padding: 2rem 3rem;
+    border-radius: 2rem;
+    box-shadow: .3rem .3rem .3rem rgb(233, 231, 231);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    font-weight: bold;
+}
+
+.div-home .div-button span{
+    color: #242932;
+    line-height: 1.5rem;
+    font-size: .9rem;
+    font-weight: bold;
+}
+
+.div-home .div-button a{
+    position: absolute;
+    bottom: -1.5rem;
+    margin: .5rem 0;
+    padding: 0 2rem;
+    border: .12rem solid rgb(204, 163, 88);
+    background: rgb(204, 163, 88);
+    border-radius: .2rem;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-decoration: none;
+    cursor: pointer;
+    transition: .5s;
+    color: white;
+    font-size: .8rem;
+    font-weight: bold;
+    text-transform: uppercase;
+    width: 20rem;
+    height: 2.4rem;
+    box-shadow: .3rem .3rem .3rem rgb(233, 231, 231);
+}
+
+.div-home .div-button a:hover{
+    cursor: pointer;
+    color: white;
+    background-color: #242932;
+    border: .1rem solid #242932;
+}
+
+.div-header-form{
+    display: flex;
+    align-items: flex-start;
+    justify-content: center;
+    flex-direction: column;
+    width: 100%;
+}
+
+.div-header-form h2{
+    font-weight: bold;
+    color: rgb(51, 51, 51);
+    font-size: 2.3rem;
+    padding-bottom: 2rem;
+    width: 100%;
+    text-align: left;
+}
+
+.div-image-card{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 40%;
+    background-size: cover;
+    padding: 1.5rem .5rem;
+}
+
+.div-image-card img{
+    width: 25rem;
+    height: auto;
+}

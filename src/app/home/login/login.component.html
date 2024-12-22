@@ -1,0 +1,23 @@
+
+<div [class]="page">
+    <form [class]="pageLogin" [formGroup]="data">
+        <div class="div-header-form">
+            <h4>Login</h4>
+        </div>
+        <div class="div-first-data">
+            <input class="input" type="email" name="Correo" id="email" required placeholder="Correo electrónico" formControlName="email">
+            <input class="input" type="text" name="Username" id="username" required placeholder="Username" formControlName="username">
+            <input class="input" type="password" name="Password" id="password" required placeholder="Password" formControlName="password">
+            <div [class]="divWarning" id="div-warning">
+                <label id="warning">{{message}}</label>
+            </div>
+            <hr class="hr">
+        </div>
+        <div class="group-button">
+            <div class="div-btn div-btn-next">
+                <input class="btn-next btn-prev" type="button" value="Cancelar" (click)="closeLogin()">
+                <input class="btn-next" type="button" value="Entrar" (click)="getSession()">
+            </div>
+        </div>
+    </form>
+</div>

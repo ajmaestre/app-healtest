@@ -1,0 +1,139 @@
+
+.page{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    margin: 0;
+    height: inherit;
+    padding: 5rem;
+}
+
+.footer{
+    background-color: #242932;
+    height: 60vh;
+    padding-top: 4.5rem;
+    padding-bottom: 4.5rem;
+}
+
+.footer .data{
+    width: 100%;
+    height: 100%;
+    background-color: #242932;
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+    justify-content: center;
+}
+
+.footer .data .links{
+    width: 30%;
+    height: auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.footer .data .links .div-header{
+    width: 100%;
+    padding: 0 1.5rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    height: 45%;
+}
+
+.footer .data .links .div-header h2{
+    font-size: 1.5rem;
+    margin-bottom: 1rem;
+    font-weight: bold;
+    color: rgb(204, 163, 88);
+    padding-bottom: 0;
+    width: 100%;
+    text-align: left;
+}
+
+.footer .data .links .nav{
+    width: 100%;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    height: 45%;
+}
+
+.footer .data .links .nav ul{
+    padding: 0 1rem;
+    display: flex;
+    align-items: flex-start;
+    justify-content: flex-start;
+    flex-direction: column;
+    width: inherit;
+    color: white;
+}
+
+.footer .data .links  .nav ul li{
+    margin: 0;
+    width: 100%;
+    list-style: none;
+}
+
+.footer .data .links .nav ul li a {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: flex-start;
+    text-decoration: none;
+    cursor: pointer;
+    transition: .5s;
+    background: transparent;
+    margin: 0 .5rem;
+    color: white;
+    font-size: .8rem;
+    font-weight: bold;
+    text-transform: none;
+    width: inherit;
+    height: 2.4rem;
+}
+
+.footer .data .links .nav ul li a hr{
+    width: 2rem;
+    height: 0;
+    margin: .5rem;
+    border: .01rem solid white;
+    transition: .5s;
+}
+
+.footer .data .links .nav ul li a:hover{
+    color: rgb(204, 163, 88);
+}
+
+.footer .data .links .nav ul li a:hover hr{
+    transition: .5s;
+    border: .01rem solid rgb(204, 163, 88);
+    width: 5rem;
+}
+
+.hr{
+    width: 100%;
+    margin: 1.5rem 0;
+    border: .1rem solid rgb(228, 227, 227);
+}
+
+.footer .author{
+    height: 20%;
+    display: flex;
+    align-items: flex-end;
+    justify-content: center;
+    width: 100%;
+}
+
+.footer .author span{
+    margin-top: 6rem;
+    line-height: 1.5rem;
+    font-weight: 600;
+    font-size: .9rem;
+    text-align: center;
+    color: rgb(204, 163, 88);
+}

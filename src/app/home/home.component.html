@@ -1,0 +1,16 @@
+
+<app-nav (newPage)="loadLogin($event)"></app-nav>
+
+<div class="div-form">
+
+  <app-init id="inicio" (newPage)="loadLogin($event)"></app-init>
+
+  <app-us id="nosotros"></app-us>
+
+  <app-objetivs id="objetivos"></app-objetivs>
+
+  <app-footer class="page"></app-footer>
+
+</div>
+
+<app-login [page]="loadClass" [pageLogin]="loadClassTwo" (closePage)="loadLogin($event)"></app-login>

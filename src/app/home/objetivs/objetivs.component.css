@@ -1,0 +1,69 @@
+
+.page{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    margin: 0;
+    padding: 5rem;
+    height: 100vh;
+}
+
+.div-skilles{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+}
+
+.div-skilles .div-skill{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin: 1.5rem;
+    padding: 1.5rem;
+    width: 12rem;
+    border-radius: .2rem;
+    transition: .5s;
+    cursor: pointer;
+}
+
+.div-skilles .div-skill:hover{
+    background-color: rgb(204, 163, 88);
+}
+
+.div-skill:hover svg{
+    fill: #242932;
+}
+
+svg{
+    fill: rgb(204, 163, 88);
+    margin-bottom: .5rem;
+    width: 6.5rem;
+    height: 6.5rem;
+}
+
+.div-skilles .div-skill h4{
+    font-size: .8rem;
+    font-weight: bold;
+    color: rgb(204, 163, 88);
+}
+
+.div-skilles .div-skill p{
+    margin: 1.5rem 0;
+    line-height: 1.5rem;
+    font-weight: 600;
+    font-size: .9rem;
+    text-align: center;
+    color: rgb(204, 163, 88);
+}
+
+.div-skilles .div-skill:hover h4{
+    color: #242932;
+}
+
+.div-skilles .div-skill:hover p{
+    color: #242932;
+}
