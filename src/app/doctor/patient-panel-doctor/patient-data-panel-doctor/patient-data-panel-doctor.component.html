@@ -1,0 +1,94 @@
+
+<div [class]="page">
+    <div [class]="pageAdd">
+
+        <div class="data">
+            <div class="div-header-form">
+                <h4>Datos del paciente</h4>
+                <div class="div-icon">
+                    <a type="button" (click)="closeModal()">
+                        <svg version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg"
+                            xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 212.982 212.982"
+                            style="enable-background:new 0 0 212.982 212.982;" xml:space="preserve">
+                            <g id="Close">
+                                <path style="fill-rule:evenodd;clip-rule:evenodd;" d="M131.804,106.491l75.936-75.936c6.99-6.99,6.99-18.323,0-25.312
+            c-6.99-6.99-18.322-6.99-25.312,0l-75.937,75.937L30.554,5.242c-6.99-6.99-18.322-6.99-25.312,0c-6.989,6.99-6.989,18.323,0,25.312
+            l75.937,75.936L5.242,182.427c-6.989,6.99-6.989,18.323,0,25.312c6.99,6.99,18.322,6.99,25.312,0l75.937-75.937l75.937,75.937
+            c6.989,6.99,18.322,6.99,25.312,0c6.99-6.99,6.99-18.322,0-25.312L131.804,106.491z" />
+                            </g>
+                            <g></g>
+                            <g></g>
+                            <g></g>
+                            <g></g>
+                            <g></g>
+                            <g></g>
+                            <g></g>
+                            <g></g>
+                            <g></g>
+                            <g></g>
+                            <g></g>
+                            <g></g>
+                            <g></g>
+                            <g></g>
+                            <g></g>
+                        </svg>
+                    </a>
+                </div>
+            </div>
+            <div class="div-sep">
+                <hr class="sep">
+            </div>
+            <div class="body">
+                <div class="div-header groupTitle" *ngIf="dataUser?.id">
+                    <div class="div-info input">
+                        <h4 class="h4">Paciente: </h4>
+                        <span>{{dataUser.name}} {{dataUser.lastname}}</span>
+                    </div>
+                    <div class="div-info input">
+                        <h4 class="h4">Correo electrónico: </h4>
+                        <span>{{dataUser.email}}</span>
+                    </div>
+                    <div class="div-info input">
+                        <h4 class="h4">Grupo: </h4>
+                        <span *ngFor="let group of dataUser?.groups">{{group.name}}</span>
+                        <span *ngIf="!dataUser?.groups">Sin grupo</span>
+                        <div class="btn-group">
+                            <div class="div-btn">
+                                <a *ngIf="dataUser?.groups" type="button" (click)="openModalChangePatientInGroup(dataUser)">
+                                    <svg width="24" height="24" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                                        <title>Cambiar grupo</title>
+                                        <path d="M18 19v-7a1 1 0 0 1 2 0v8a1 1 0 0 1-1 1H4a1 1 0 0 1-1-1V5a1 1 0 0 1 1-1h8a1 1 0 0 1 0 2H5v13h13zm1.293-15.707a1 1 0 0 1 1.414 1.414l-9.513 9.513a1 1 0 1 1-1.414-1.414l9.513-9.513z" fill-rule="nonzero"/>
+                                    </svg>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="div-info input">
+                        <h4 class="h4">Monitor: </h4>
+                        <span *ngIf="dataUser?.monitor">{{dataUser.monitor}}</span>
+                        <span *ngIf="!dataUser?.monitor">Sin monitor</span>
+                    </div>
+                    <div class="div-info input">
+                        <h4 class="h4">Teléfono: </h4>
+                        <span>{{dataUser.telephone}}</span>
+                    </div>
+                    <div class="tabs input">
+                        <a (click)="getTests()" [class]="isSelect('test')">Evaluaciones</a>
+                        <a (click)="getActivities()" [class]="isSelect('act')">Actividades</a>
+                    </div>
+                </div>
+                <div class="panel-tab">
+                    <div class="div-list-test" *ngIf="id">
+                        <app-test-list-doctor *ngIf="!changeTab" [idUser]="id"></app-test-list-doctor>
+                    </div>
+                    <div class="div-list-test" *ngIf="id">
+                        <app-activity-list-doctor *ngIf="changeTab" [idUser]="id"></app-activity-list-doctor>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+</div>
+
+<app-test-data-doctor></app-test-data-doctor>

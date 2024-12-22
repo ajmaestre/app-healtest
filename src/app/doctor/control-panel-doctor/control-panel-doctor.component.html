@@ -1,0 +1,384 @@
+
+<div class="div-home page" id="inicio">
+
+    <div class="div-header-form">
+        <h2>Panel de control</h2>
+    </div>
+ 
+    <div class="div-panel">
+
+        <a type="button" (click)="openPageGroup()">
+            <div class="div-project">
+                <div class="div-project-image">
+                    <svg height="24" id="svg8" version="1.1" viewBox="0 0 6.3499998 6.3500002" width="24"
+                        xmlns="http://www.w3.org/2000/svg" xmlns:cc="http://creativecommons.org/ns#"
+                        xmlns:dc="http://purl.org/dc/elements/1.1/"
+                        xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+                        xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+                        xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+                        xmlns:svg="http://www.w3.org/2000/svg">
+                        <defs id="defs2" />
+                        <g id="layer1">
+                            <path
+                                d="M 0.79297494,0.52968339 A 0.26460998,0.26460998 0 0 0 0.52942507,0.79530019 V 5.5567667 A 0.26460998,0.26460998 0 0 0 0.79297494,5.8203166 H 5.557025 A 0.26460998,0.26460998 0 0 0 5.8205749,5.5567667 V 0.79530019 A 0.26460998,0.26460998 0 0 0 5.557025,0.52968339 Z M 3.1762917,1.8515666 A 0.26458352,0.26458352 0 0 1 3.4398416,2.1171834 V 2.9104167 H 4.2325582 A 0.26458352,0.26458352 0 0 1 4.498175,3.1760335 0.26458352,0.26458352 0 0 1 4.2325582,3.4395833 H 3.4398416 V 4.2348835 A 0.26458352,0.26458352 0 0 1 3.1762917,4.4984334 0.26458352,0.26458352 0 0 1 2.9101583,4.2348835 V 3.4395833 H 2.1174418 A 0.26458352,0.26458352 0 0 1 1.8518249,3.1760335 0.26458352,0.26458352 0 0 1 2.1174418,2.9104167 H 2.9101583 V 2.1171834 A 0.26458352,0.26458352 0 0 1 3.1762917,1.8515666 Z"
+                                id="path5115"
+                                style="color:#000000;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:medium;line-height:normal;font-family:sans-serif;font-variant-ligatures:normal;font-variant-position:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-alternates:normal;font-variant-east-asian:normal;font-feature-settings:normal;font-variation-settings:normal;text-indent:0;text-align:start;text-decoration:none;text-decoration-line:none;text-decoration-style:solid;text-decoration-color:#000000;letter-spacing:normal;word-spacing:normal;text-transform:none;writing-mode:lr-tb;direction:ltr;text-orientation:mixed;dominant-baseline:auto;baseline-shift:baseline;text-anchor:start;white-space:normal;shape-padding:0;shape-margin:0;inline-size:0;clip-rule:nonzero;display:inline;overflow:visible;visibility:visible;opacity:1;isolation:auto;mix-blend-mode:normal;color-interpolation:sRGB;color-interpolation-filters:linearRGB;solid-color:#000000;solid-opacity:1;vector-effect:none;fill-opacity:1;fill-rule:nonzero;stroke:none;stroke-width:0.529167;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1;paint-order:stroke fill markers;color-rendering:auto;image-rendering:auto;shape-rendering:auto;text-rendering:auto;enable-background:accumulate;stop-color:#000000;stop-opacity:1" />
+                        </g>
+                    </svg>
+                </div>
+                <div class="body">
+                    <div class="div-header-form">
+                        <h4>Crear Nuevo Grupo</h4>
+                    </div>
+                </div>
+            </div>
+        </a>
+
+        <a type="button" (click)="openPagePatient()">
+            <div class="div-project">
+                <div class="div-project-image">
+                    <svg height="24" id="svg8" version="1.1" viewBox="0 0 6.3499998 6.3500002" width="24"
+                        xmlns="http://www.w3.org/2000/svg" xmlns:cc="http://creativecommons.org/ns#"
+                        xmlns:dc="http://purl.org/dc/elements/1.1/"
+                        xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+                        xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+                        xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+                        xmlns:svg="http://www.w3.org/2000/svg">
+                        <defs id="defs2" />
+                        <g id="layer1">
+                            <path
+                                d="M 0.79297494,0.52968339 A 0.26460998,0.26460998 0 0 0 0.52942507,0.79530019 V 5.5567667 A 0.26460998,0.26460998 0 0 0 0.79297494,5.8203166 H 5.557025 A 0.26460998,0.26460998 0 0 0 5.8205749,5.5567667 V 0.79530019 A 0.26460998,0.26460998 0 0 0 5.557025,0.52968339 Z M 3.1762917,1.8515666 A 0.26458352,0.26458352 0 0 1 3.4398416,2.1171834 V 2.9104167 H 4.2325582 A 0.26458352,0.26458352 0 0 1 4.498175,3.1760335 0.26458352,0.26458352 0 0 1 4.2325582,3.4395833 H 3.4398416 V 4.2348835 A 0.26458352,0.26458352 0 0 1 3.1762917,4.4984334 0.26458352,0.26458352 0 0 1 2.9101583,4.2348835 V 3.4395833 H 2.1174418 A 0.26458352,0.26458352 0 0 1 1.8518249,3.1760335 0.26458352,0.26458352 0 0 1 2.1174418,2.9104167 H 2.9101583 V 2.1171834 A 0.26458352,0.26458352 0 0 1 3.1762917,1.8515666 Z"
+                                id="path5115"
+                                style="color:#000000;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:medium;line-height:normal;font-family:sans-serif;font-variant-ligatures:normal;font-variant-position:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-alternates:normal;font-variant-east-asian:normal;font-feature-settings:normal;font-variation-settings:normal;text-indent:0;text-align:start;text-decoration:none;text-decoration-line:none;text-decoration-style:solid;text-decoration-color:#000000;letter-spacing:normal;word-spacing:normal;text-transform:none;writing-mode:lr-tb;direction:ltr;text-orientation:mixed;dominant-baseline:auto;baseline-shift:baseline;text-anchor:start;white-space:normal;shape-padding:0;shape-margin:0;inline-size:0;clip-rule:nonzero;display:inline;overflow:visible;visibility:visible;opacity:1;isolation:auto;mix-blend-mode:normal;color-interpolation:sRGB;color-interpolation-filters:linearRGB;solid-color:#000000;solid-opacity:1;vector-effect:none;fill-opacity:1;fill-rule:nonzero;stroke:none;stroke-width:0.529167;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1;paint-order:stroke fill markers;color-rendering:auto;image-rendering:auto;shape-rendering:auto;text-rendering:auto;enable-background:accumulate;stop-color:#000000;stop-opacity:1" />
+                        </g>
+                    </svg>
+                </div>
+                <div class="body">
+                    <div class="div-header-form">
+                        <h4>Crear Nuevo Paciente</h4>
+                    </div>
+                </div>
+            </div>
+        </a>
+
+        <a type="button" (click)="openModalAddResourse()">
+            <div class="div-project">
+                <div class="div-project-image">
+                    <svg height="24" id="svg8" version="1.1" viewBox="0 0 6.3499998 6.3500002" width="24"
+                        xmlns="http://www.w3.org/2000/svg" xmlns:cc="http://creativecommons.org/ns#"
+                        xmlns:dc="http://purl.org/dc/elements/1.1/"
+                        xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+                        xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+                        xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+                        xmlns:svg="http://www.w3.org/2000/svg">
+                        <defs id="defs2" />
+                        <g id="layer1">
+                            <path
+                                d="M 0.79297494,0.52968339 A 0.26460998,0.26460998 0 0 0 0.52942507,0.79530019 V 5.5567667 A 0.26460998,0.26460998 0 0 0 0.79297494,5.8203166 H 5.557025 A 0.26460998,0.26460998 0 0 0 5.8205749,5.5567667 V 0.79530019 A 0.26460998,0.26460998 0 0 0 5.557025,0.52968339 Z M 3.1762917,1.8515666 A 0.26458352,0.26458352 0 0 1 3.4398416,2.1171834 V 2.9104167 H 4.2325582 A 0.26458352,0.26458352 0 0 1 4.498175,3.1760335 0.26458352,0.26458352 0 0 1 4.2325582,3.4395833 H 3.4398416 V 4.2348835 A 0.26458352,0.26458352 0 0 1 3.1762917,4.4984334 0.26458352,0.26458352 0 0 1 2.9101583,4.2348835 V 3.4395833 H 2.1174418 A 0.26458352,0.26458352 0 0 1 1.8518249,3.1760335 0.26458352,0.26458352 0 0 1 2.1174418,2.9104167 H 2.9101583 V 2.1171834 A 0.26458352,0.26458352 0 0 1 3.1762917,1.8515666 Z"
+                                id="path5115"
+                                style="color:#000000;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:medium;line-height:normal;font-family:sans-serif;font-variant-ligatures:normal;font-variant-position:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-alternates:normal;font-variant-east-asian:normal;font-feature-settings:normal;font-variation-settings:normal;text-indent:0;text-align:start;text-decoration:none;text-decoration-line:none;text-decoration-style:solid;text-decoration-color:#000000;letter-spacing:normal;word-spacing:normal;text-transform:none;writing-mode:lr-tb;direction:ltr;text-orientation:mixed;dominant-baseline:auto;baseline-shift:baseline;text-anchor:start;white-space:normal;shape-padding:0;shape-margin:0;inline-size:0;clip-rule:nonzero;display:inline;overflow:visible;visibility:visible;opacity:1;isolation:auto;mix-blend-mode:normal;color-interpolation:sRGB;color-interpolation-filters:linearRGB;solid-color:#000000;solid-opacity:1;vector-effect:none;fill-opacity:1;fill-rule:nonzero;stroke:none;stroke-width:0.529167;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1;paint-order:stroke fill markers;color-rendering:auto;image-rendering:auto;shape-rendering:auto;text-rendering:auto;enable-background:accumulate;stop-color:#000000;stop-opacity:1" />
+                        </g>
+                    </svg>
+                </div>
+                <div class="body">
+                    <div class="div-header-form">
+                        <h4>Crear Nuevo Recurso</h4>
+                    </div>
+                </div>
+            </div>
+        </a>
+
+        <a type="button" (click)="openModalQuestion()">
+            <div class="div-project">
+                <div class="div-project-image">
+                    <svg height="24" id="svg8" version="1.1" viewBox="0 0 6.3499998 6.3500002" width="24"
+                        xmlns="http://www.w3.org/2000/svg" xmlns:cc="http://creativecommons.org/ns#"
+                        xmlns:dc="http://purl.org/dc/elements/1.1/"
+                        xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+                        xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+                        xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+                        xmlns:svg="http://www.w3.org/2000/svg">
+                        <defs id="defs2" />
+                        <g id="layer1">
+                            <path
+                                d="M 0.79297494,0.52968339 A 0.26460998,0.26460998 0 0 0 0.52942507,0.79530019 V 5.5567667 A 0.26460998,0.26460998 0 0 0 0.79297494,5.8203166 H 5.557025 A 0.26460998,0.26460998 0 0 0 5.8205749,5.5567667 V 0.79530019 A 0.26460998,0.26460998 0 0 0 5.557025,0.52968339 Z M 3.1762917,1.8515666 A 0.26458352,0.26458352 0 0 1 3.4398416,2.1171834 V 2.9104167 H 4.2325582 A 0.26458352,0.26458352 0 0 1 4.498175,3.1760335 0.26458352,0.26458352 0 0 1 4.2325582,3.4395833 H 3.4398416 V 4.2348835 A 0.26458352,0.26458352 0 0 1 3.1762917,4.4984334 0.26458352,0.26458352 0 0 1 2.9101583,4.2348835 V 3.4395833 H 2.1174418 A 0.26458352,0.26458352 0 0 1 1.8518249,3.1760335 0.26458352,0.26458352 0 0 1 2.1174418,2.9104167 H 2.9101583 V 2.1171834 A 0.26458352,0.26458352 0 0 1 3.1762917,1.8515666 Z"
+                                id="path5115"
+                                style="color:#000000;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:medium;line-height:normal;font-family:sans-serif;font-variant-ligatures:normal;font-variant-position:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-alternates:normal;font-variant-east-asian:normal;font-feature-settings:normal;font-variation-settings:normal;text-indent:0;text-align:start;text-decoration:none;text-decoration-line:none;text-decoration-style:solid;text-decoration-color:#000000;letter-spacing:normal;word-spacing:normal;text-transform:none;writing-mode:lr-tb;direction:ltr;text-orientation:mixed;dominant-baseline:auto;baseline-shift:baseline;text-anchor:start;white-space:normal;shape-padding:0;shape-margin:0;inline-size:0;clip-rule:nonzero;display:inline;overflow:visible;visibility:visible;opacity:1;isolation:auto;mix-blend-mode:normal;color-interpolation:sRGB;color-interpolation-filters:linearRGB;solid-color:#000000;solid-opacity:1;vector-effect:none;fill-opacity:1;fill-rule:nonzero;stroke:none;stroke-width:0.529167;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1;paint-order:stroke fill markers;color-rendering:auto;image-rendering:auto;shape-rendering:auto;text-rendering:auto;enable-background:accumulate;stop-color:#000000;stop-opacity:1" />
+                        </g>
+                    </svg>
+                </div>
+                <div class="body">
+                    <div class="div-header-form">
+                        <h4>Crear Nueva Pregunta</h4>
+                    </div>
+                </div>
+            </div>
+        </a>
+
+        <a type="button" (click)="openModalTest()">
+            <div class="div-project">
+                <div class="div-project-image">
+                    <svg height="24" id="svg8" version="1.1" viewBox="0 0 6.3499998 6.3500002" width="24"
+                        xmlns="http://www.w3.org/2000/svg" xmlns:cc="http://creativecommons.org/ns#"
+                        xmlns:dc="http://purl.org/dc/elements/1.1/"
+                        xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+                        xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+                        xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+                        xmlns:svg="http://www.w3.org/2000/svg">
+                        <defs id="defs2" />
+                        <g id="layer1">
+                            <path
+                                d="M 0.79297494,0.52968339 A 0.26460998,0.26460998 0 0 0 0.52942507,0.79530019 V 5.5567667 A 0.26460998,0.26460998 0 0 0 0.79297494,5.8203166 H 5.557025 A 0.26460998,0.26460998 0 0 0 5.8205749,5.5567667 V 0.79530019 A 0.26460998,0.26460998 0 0 0 5.557025,0.52968339 Z M 3.1762917,1.8515666 A 0.26458352,0.26458352 0 0 1 3.4398416,2.1171834 V 2.9104167 H 4.2325582 A 0.26458352,0.26458352 0 0 1 4.498175,3.1760335 0.26458352,0.26458352 0 0 1 4.2325582,3.4395833 H 3.4398416 V 4.2348835 A 0.26458352,0.26458352 0 0 1 3.1762917,4.4984334 0.26458352,0.26458352 0 0 1 2.9101583,4.2348835 V 3.4395833 H 2.1174418 A 0.26458352,0.26458352 0 0 1 1.8518249,3.1760335 0.26458352,0.26458352 0 0 1 2.1174418,2.9104167 H 2.9101583 V 2.1171834 A 0.26458352,0.26458352 0 0 1 3.1762917,1.8515666 Z"
+                                id="path5115"
+                                style="color:#000000;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:medium;line-height:normal;font-family:sans-serif;font-variant-ligatures:normal;font-variant-position:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-alternates:normal;font-variant-east-asian:normal;font-feature-settings:normal;font-variation-settings:normal;text-indent:0;text-align:start;text-decoration:none;text-decoration-line:none;text-decoration-style:solid;text-decoration-color:#000000;letter-spacing:normal;word-spacing:normal;text-transform:none;writing-mode:lr-tb;direction:ltr;text-orientation:mixed;dominant-baseline:auto;baseline-shift:baseline;text-anchor:start;white-space:normal;shape-padding:0;shape-margin:0;inline-size:0;clip-rule:nonzero;display:inline;overflow:visible;visibility:visible;opacity:1;isolation:auto;mix-blend-mode:normal;color-interpolation:sRGB;color-interpolation-filters:linearRGB;solid-color:#000000;solid-opacity:1;vector-effect:none;fill-opacity:1;fill-rule:nonzero;stroke:none;stroke-width:0.529167;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1;paint-order:stroke fill markers;color-rendering:auto;image-rendering:auto;shape-rendering:auto;text-rendering:auto;enable-background:accumulate;stop-color:#000000;stop-opacity:1" />
+                        </g>
+                    </svg>
+                </div>
+                <div class="body">
+                    <div class="div-header-form">
+                        <h4>Crear Nueva Evaluación</h4>
+                    </div>
+                </div>
+            </div>
+        </a>
+
+        <a type="button" (click)="openPageListGroup()">
+            <div class="div-project">
+                <div class="div-project-image">
+                    <svg version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg"
+                        xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="85.988px"
+                        height="85.987px" viewBox="0 0 85.988 85.987"
+                        style="enable-background:new 0 0 85.988 85.987;" xml:space="preserve">
+                        <g>
+                            <path d="M77.993,30.884c-2.692,0-4.878,2.185-4.878,4.868c0,2.685,2.186,4.867,4.878,4.867
+c2.683,0,4.867-2.183,4.867-4.867C82.86,33.069,80.675,30.884,77.993,30.884z M8.005,30.884c-2.692,0-4.878,2.185-4.878,4.868
+c0,2.685,2.186,4.867,4.878,4.867c2.685,0,4.87-2.183,4.87-4.867C12.875,33.069,10.69,30.884,8.005,30.884z M63.504,22.03
+c-3.997,0-7.239,3.25-7.239,7.25c0,3.992,3.242,7.236,7.239,7.236c3.998,0,7.25-3.244,7.25-7.236
+C70.754,25.284,67.502,22.03,63.504,22.03z M85.988,66.088h-8.254V50.896c0-2.61-0.767-5.033-1.999-7.146
+c0.726-0.212,1.471-0.363,2.258-0.363c4.401,0,7.995,3.594,7.995,8.006V66.088z M22.483,22.03c-4,0-7.25,3.25-7.25,7.25
+c0,3.992,3.25,7.236,7.25,7.236c3.987,0,7.237-3.244,7.237-7.236C29.72,25.284,26.471,22.03,22.483,22.03z M8.005,43.387
+c0.787,0,1.522,0.15,2.25,0.363c-1.245,2.113-1.999,4.536-1.999,7.146v15.192H0V51.393C0,46.98,3.596,43.387,8.005,43.387z
+ M42.986,7.555c-5.9,0-10.71,4.805-10.71,10.711c0,5.905,4.805,10.716,10.71,10.716c5.906,0,10.717-4.811,10.717-10.716
+C53.708,12.359,48.892,7.555,42.986,7.555z M75.083,71.742H62.438V48.627c0-3.179-0.839-6.136-2.195-8.787
+c1.035-0.306,2.123-0.523,3.262-0.523c6.38,0,11.578,5.188,11.578,11.579V71.742z M23.537,48.627v23.115H10.908V50.896
+c0-6.385,5.191-11.579,11.581-11.579c1.139,0,2.216,0.217,3.249,0.523C24.381,42.491,23.537,45.448,23.537,48.627z M26.188,78.433
+h33.598V48.627c0-9.264-7.539-16.798-16.801-16.798c-9.269,0-16.797,7.534-16.797,16.798V78.433z" />
+                        </g>
+                        <g>
+                        </g>
+                        <g>
+                        </g>
+                        <g>
+                        </g>
+                        <g>
+                        </g>
+                        <g>
+                        </g>
+                        <g>
+                        </g>
+                        <g>
+                        </g>
+                        <g>
+                        </g>
+                        <g>
+                        </g>
+                        <g>
+                        </g>
+                        <g>
+                        </g>
+                        <g>
+                        </g>
+                        <g>
+                        </g>
+                        <g>
+                        </g>
+                        <g>
+                        </g>
+                    </svg>
+                </div>
+                <div class="body">
+                    <div class="div-header-form">
+                        <h4>Grupos</h4>
+                    </div>
+                    <div class="div-text-body">
+                        <span class="span">{{countGroups.count}}</span>
+                    </div>
+                </div>
+            </div>
+        </a>
+
+        <a type="button" (click)="openPageListPatient()">
+            <div class="div-project">
+                <div class="div-project-image">
+                    <svg height="24" id="svg3171" version="1.1" viewBox="0 0 6.3499999 6.3500002" width="24"
+                        xmlns="http://www.w3.org/2000/svg" xmlns:cc="http://creativecommons.org/ns#"
+                        xmlns:dc="http://purl.org/dc/elements/1.1/"
+                        xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+                        xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+                        xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+                        xmlns:svg="http://www.w3.org/2000/svg">
+                        <defs id="defs3165" />
+                        <g id="layer1">
+                            <path
+                                d="m 3.176292,0.52916623 c -0.7275637,0 -1.3245961,0.59496497 -1.3245961,1.32252887 0,0.7275639 0.5970324,1.3245964 1.3245961,1.3245962 0.727564,0 1.3220123,-0.5970323 1.3220123,-1.3245962 0,-0.7275639 -0.5944483,-1.32252887 -1.3220123,-1.32252887 z M 2.1173387,3.4398668 c -0.7943443,0 -1.58817203,0.5292183 -1.58817203,1.3220123 V 5.350014 c 0.05042,0.3308308 0.2646094,0.4713351 0.52973543,0.4708184 H 5.2916149 C 5.5567406,5.8213615 5.731772,5.6000289 5.8208331,5.350014 V 4.7618791 C 5.8213623,3.7044758 5.0275223,3.4398668 4.2326614,3.4398668 Z"
+                                id="path1826"
+                                style="color:#000000;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:medium;line-height:normal;font-family:sans-serif;font-variant-ligatures:normal;font-variant-position:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-alternates:normal;font-variant-east-asian:normal;font-feature-settings:normal;font-variation-settings:normal;text-indent:0;text-align:start;text-decoration:none;text-decoration-line:none;text-decoration-style:solid;text-decoration-color:#000000;letter-spacing:normal;word-spacing:normal;text-transform:none;writing-mode:lr-tb;direction:ltr;text-orientation:mixed;dominant-baseline:auto;baseline-shift:baseline;text-anchor:start;white-space:normal;shape-padding:0;shape-margin:0;inline-size:0;clip-rule:nonzero;display:inline;overflow:visible;visibility:visible;opacity:1;isolation:auto;mix-blend-mode:normal;color-interpolation:sRGB;color-interpolation-filters:linearRGB;solid-color:#000000;solid-opacity:1;vector-effect:none;fill-opacity:1;fill-rule:nonzero;stroke:none;stroke-width:0.52922;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1;color-rendering:auto;image-rendering:auto;shape-rendering:auto;text-rendering:auto;enable-background:accumulate;stop-color:#000000;stop-opacity:1" />
+                        </g>
+                    </svg>
+                </div>
+                <div class="body">
+                    <div class="div-header-form">
+                        <h4>Pacientes</h4>
+                    </div>
+                    <div class="div-text-body">
+                        <span class="span">{{countPatients.count}}</span>
+                    </div>
+                </div>
+            </div>
+        </a>
+
+        <a type="button" (click)="openPageListResourse()">
+            <div class="div-project">
+                <div class="div-project-image">
+                    <svg version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg"
+                        xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="106.058px"
+                        height="106.059px" viewBox="0 0 106.058 106.059"
+                        style="enable-background:new 0 0 106.058 106.059;" xml:space="preserve">
+                        <g>
+                            <path d="M78.242,35.722l-6.38,17.049H70.65V35.722H78.242z M26.994,35.734h-8.477v17.046l16.961-0.01
+l-0.005-8.516v-8.521H26.994z M26.994,35.315h8.479V18.266H18.512l0.005,17.049H26.994z M70.661,70.226l16.948-0.011V53.177H76.875
+l-4.479,11.97c-0.29,0.761-0.952,1.289-1.734,1.465V70.226z M52.843,18.256l-16.946,0.01v17.049l16.946-0.01V18.256z
+ M26.999,70.236h7.943l0.541-1.082V53.189L18.522,53.2l0.011,17.046L26.999,70.236z M70.231,35.305l-0.005-8.549l-0.006-8.5H53.262
+v17.049h8.487H70.231z M34.73,70.655l-16.203,0.011V84l14.31-9.555L34.73,70.655z M49.079,52.771h3.774l-0.005-7.462l-0.031-0.031
+L49.079,52.771z M87.598,35.294V24.539l-4.018,10.766L87.598,35.294z M106.053,21.21v63.639c0,11.667-9.543,21.21-21.21,21.21
+H21.215c-11.667,0-21.209-9.543-21.209-21.21V21.21C0.005,9.543,9.548,0,21.215,0h63.628C96.51,0,106.053,9.543,106.053,21.21z
+ M92.797,92.771l-0.026-79.505l-79.51,0.021l0.01,79.505L92.797,92.771z M40.356,70.236h12.492V53.189h-3.982L40.356,70.236z
+ M87.598,35.711h-4.184l-6.38,17.049h10.574L87.598,35.711z M70.661,70.646v17.046h16.948V70.63L70.661,70.646z M64.504,52.771
+h5.731V35.722H61.75h-8.487v2.736c0.425,0.15,0.803,0.394,1.088,0.774L64.504,52.771z M35.903,53.189V68.32l7.555-15.131H35.903z
+ M52.853,70.655H40.149l-3.265,6.53c-0.191,0.372-0.466,0.704-0.823,0.941l-0.153,0.099v0.979l0.011,8.502l16.953-0.01
+l-0.005-8.514L52.853,70.655z M53.283,79.174l0.006,8.518h16.953V70.646l-16.969,0.01L53.283,79.174z M70.231,57.112v-3.917h-5.416
+l4.593,6.116L70.231,57.112z M58.446,52.771l-5.179-6.9l0.006,6.9H58.446z M35.483,78.5l-13.787,9.202h13.802l-0.01-8.497V78.5
+H35.483z M78.397,35.305l6.385-17.06l-14.137,0.011l0.005,8.5l0.006,8.549H78.397z M43.66,52.771l6.581-13.168
+c0.376-0.751,1.113-1.256,1.944-1.331c0.241-0.016,0.44,0.075,0.658,0.114v-2.664l-16.946,0.013v8.513l0.005,8.523H43.66z
+ M58.761,53.189h-5.488v17.047l16.969-0.011v-3.562c-0.798,0.026-1.569-0.279-2.062-0.911L58.761,53.189z M70.65,53.189v2.794
+l1.052-2.794H70.65z" />
+                        </g>
+                        <g>
+                        </g>
+                        <g>
+                        </g>
+                        <g>
+                        </g>
+                        <g>
+                        </g>
+                        <g>
+                        </g>
+                        <g>
+                        </g>
+                        <g>
+                        </g>
+                        <g>
+                        </g>
+                        <g>
+                        </g>
+                        <g>
+                        </g>
+                        <g>
+                        </g>
+                        <g>
+                        </g>
+                        <g>
+                        </g>
+                        <g>
+                        </g>
+                        <g>
+                        </g>
+                    </svg>
+                </div>
+                <div class="body">
+                    <div class="div-header-form">
+                        <h4>Recursos</h4>
+                    </div>
+                    <div class="div-text-body">
+                        <span class="span">{{countResourses.count}}</span>
+                    </div>
+                </div>
+            </div>
+        </a>
+
+        <a type="button" (click)="openPageListQuestion()">
+            <div class="div-project">
+                <div class="div-project-image">
+                    <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
+                        version="1.1" viewBox="0 0 512 512" style="enable-background:new 0 0 512 512;"
+                        xml:space="preserve">
+                        <g id="_x31_8_Homework_Help">
+                            <g>
+                                <path
+                                    d="M363.435,394.746c0,6.297-3.99,11.777-9.902,13.7l-154.88,51.098c-1.682,0.481-3.124,0.721-4.519,0.721    c-1.682,0-3.221-0.24-4.711-0.769l-154.735-51.05c-5.864-1.875-9.854-7.355-9.854-13.7V167.81    c-2.548,0.721-4.903,1.923-6.97,3.653c-4.47,3.653-7.018,9.085-7.018,14.805v232.175c0,9.037,6.153,16.728,14.95,18.747    l131.662,30.091c1.971,18.987,18.074,33.889,37.542,33.889c19.516,0,35.571-14.901,37.542-33.889l131.662-30.091    c8.797-2.019,14.95-9.71,14.95-18.747v-200.69c-5.336-1.105-10.623-2.596-15.719-4.519V394.746z" />
+                                <path
+                                    d="M37.717,399.312l154.927,51.098c0.481,0.192,1.01,0.24,1.49,0.24c0.481,0,1.01-0.096,1.49-0.24l154.928-51.098    c1.923-0.625,3.269-2.5,3.269-4.567V209.198c-0.096-0.048-0.192-0.096-0.288-0.144l-40.859,21.054    c-2.692,1.394-5.72,2.163-8.941,2.163c-5.143,0-9.999-2.019-13.652-5.672c-0.769-0.817-1.49-1.634-2.067-2.548l-72.296,23.842    c-0.481,0.192-1.01,0.24-1.49,0.24c-2.019,0-3.894-1.25-4.567-3.269c-0.817-2.548,0.529-5.239,3.076-6.057l71.816-23.698    c-0.481-3.797,0.192-7.691,2.067-11.2l19.949-38.648c-2.788-4.807-5.143-9.806-7.162-14.95l-105.272,34.706L40.746,134.45    c-1.49-0.529-3.077-0.241-4.326,0.625c-1.25,0.913-1.971,2.355-1.971,3.894v255.777C34.449,396.813,35.746,398.687,37.717,399.312    z M212.738,284.09l114.694-37.831c2.499-0.817,5.239,0.577,6.057,3.077c0.817,2.548-0.529,5.24-3.077,6.105l-114.693,37.782    c-0.481,0.192-1.01,0.24-1.49,0.24c-2.019,0-3.894-1.298-4.567-3.317C208.844,287.647,210.19,284.955,212.738,284.09z     M212.738,329.42l114.694-37.831c2.499-0.866,5.239,0.577,6.057,3.076c0.817,2.5-0.529,5.24-3.077,6.057l-114.693,37.831    c-0.481,0.192-1.01,0.24-1.49,0.24c-2.019,0-3.894-1.25-4.567-3.269C208.844,332.977,210.19,330.285,212.738,329.42z     M212.738,374.749l114.694-37.831c2.499-0.865,5.239,0.529,6.057,3.028c0.817,2.548-0.529,5.239-3.077,6.105l-114.693,37.831    c-0.481,0.192-1.01,0.241-1.49,0.241c-2.019,0-3.894-1.298-4.567-3.317C208.844,378.306,210.19,375.566,212.738,374.749z     M54.782,204.007c0.817-2.5,3.557-3.894,6.057-3.077l114.693,37.879c2.548,0.817,3.894,3.509,3.077,6.057    c-0.673,2.019-2.548,3.269-4.567,3.269c-0.481,0-1.009-0.048-1.49-0.24L57.858,210.063    C55.31,209.246,53.965,206.506,54.782,204.007z M54.782,249.336c0.817-2.499,3.557-3.894,6.057-3.077l114.693,37.831    c2.548,0.865,3.894,3.557,3.077,6.056c-0.673,2.019-2.548,3.317-4.567,3.317c-0.481,0-1.009-0.048-1.49-0.24L57.858,255.441    C55.31,254.576,53.965,251.884,54.782,249.336z M54.782,294.665c0.817-2.499,3.557-3.942,6.057-3.076l114.693,37.831    c2.548,0.865,3.894,3.557,3.077,6.105c-0.673,2.019-2.548,3.269-4.567,3.269c-0.481,0-1.009-0.048-1.49-0.24L57.858,300.722    C55.31,299.905,53.965,297.165,54.782,294.665z M54.782,339.947c0.817-2.5,3.557-3.894,6.057-3.028l114.693,37.831    c2.548,0.817,3.894,3.557,3.077,6.057c-0.673,2.019-2.548,3.317-4.567,3.317c-0.481,0-1.009-0.048-1.49-0.241L57.858,346.051    C55.31,345.186,53.965,342.494,54.782,339.947z" />
+                                <path
+                                    d="M500.913,103.926c-3.269-49.992-43.455-89.938-93.495-92.918c-27.88-1.634-54.318,7.931-74.507,26.967    c-20.237,19.083-31.341,44.897-31.341,72.681c0,19.372,5.528,38.071,16.007,54.222l-22.449,43.551    c-2.019,3.798-1.298,8.268,1.73,11.345c1.923,1.923,4.374,2.884,6.874,2.884c1.538,0,3.076-0.337,4.519-1.105l45.281-23.314    c14.565,7.98,31.053,12.21,47.829,12.21c27.496,0,54.03-11.537,72.825-31.63c17.497-18.651,26.967-42.541,26.967-67.97    C501.154,108.541,501.058,106.234,500.913,103.926z M406.272,156.299c0,2.657-2.15,4.807-4.807,4.807    c-2.657,0-4.807-2.15-4.807-4.807v-3.018c0-2.657,2.15-4.807,4.807-4.807c2.657,0,4.807,2.15,4.807,4.807V156.299z     M406.272,116.013v14.726c0,2.657-2.15,4.807-4.807,4.807c-2.657,0-4.807-2.15-4.807-4.807v-19.115    c0-2.657,2.15-4.807,4.807-4.807c9.952,0,18.045-8.093,18.045-18.04c0-9.952-8.093-18.045-18.045-18.045    c-9.947,0-18.04,8.093-18.04,18.045c0,2.657-2.15,4.807-4.807,4.807c-2.657,0-4.807-2.15-4.807-4.807    c0-15.252,12.407-27.659,27.654-27.659c15.252,0,27.659,12.407,27.659,27.659C429.124,102.385,419.237,113.731,406.272,116.013z" />
+                            </g>
+                        </g>
+                        <g id="Layer_1" />
+                    </svg>
+                </div>
+                <div class="body">
+                    <div class="div-header-form">
+                        <h4>Preguntas</h4>
+                    </div>
+                    <div class="div-text-body">
+                        <span class="span">{{countQuestions.count}}</span>
+                    </div>
+                </div>
+            </div>
+        </a>
+
+        <a type="button" (click)="openPageListTest()">
+            <div class="div-project">
+                <div class="div-project-image">
+                    <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
+                        version="1.1" viewBox="0 0 512 512" style="enable-background:new 0 0 512 512;"
+                        xml:space="preserve">
+                        <g id="_x32_5_Exam_Preparation">
+                            <g>
+                                <g>
+                                    <g>
+                                        <path
+                                            d="M426.913,408.356c-1.827,1.25-3.846,2.307-6.057,3.125l-239.433,87.967c-3.173,1.154-6.441,1.682-9.662,1.682      c-11.489,0-22.256-7.066-26.438-18.411L30.966,171.422c-2.596-7.066-2.259-14.709,0.866-21.535      c3.172-6.778,8.796-11.969,15.863-14.565l114.068-41.917v277.216c0,20.814,16.921,37.734,37.734,37.734H426.913z" />
+                                    </g>
+                                </g>
+                                <g>
+                                    <path
+                                        d="M271.473,180.429h-50.618c-2.61,0-4.732,2.122-4.732,4.732v50.618c0,2.61,2.122,4.732,4.732,4.732h50.618     c2.61,0,4.732-2.122,4.732-4.732v-50.618C276.205,182.551,274.083,180.429,271.473,180.429z M261.075,206.651l-18.542,15.092     c-0.859,0.704-1.934,1.08-3.033,1.08c-0.178,0-0.357-0.009-0.535-0.028c-1.286-0.146-2.455-0.798-3.248-1.817l-5.215-6.666     c-1.638-2.089-1.267-5.112,0.822-6.746c2.089-1.648,5.117-1.267,6.746,0.822l2.197,2.807l14.745-11.999     c2.065-1.681,5.089-1.361,6.76,0.695C263.446,201.948,263.136,204.976,261.075,206.651z" />
+                                    <path
+                                        d="M271.473,75.376h-50.618c-2.61,0-4.732,2.122-4.732,4.732v50.618c0,2.61,2.122,4.732,4.732,4.732h50.618     c2.61,0,4.732-2.122,4.732-4.732V80.108C276.205,77.498,274.083,75.376,271.473,75.376z M261.075,101.598l-18.542,15.092     c-0.859,0.704-1.934,1.08-3.033,1.08c-0.178,0-0.357-0.009-0.535-0.028c-1.282-0.146-2.455-0.798-3.248-1.817l-5.215-6.661     c-1.638-2.089-1.272-5.112,0.822-6.746c2.089-1.648,5.107-1.267,6.746,0.821l2.197,2.802l14.745-11.999     c2.065-1.681,5.089-1.361,6.76,0.695C263.446,96.895,263.136,99.922,261.075,101.598z" />
+                                    <path
+                                        d="M393.454,82.685c0,9.886,8.041,17.927,17.927,17.927h68.556l-27.163-27.3c-19.773-19.915-39.547-39.782-59.321-59.65     V82.685z" />
+                                    <path
+                                        d="M271.473,285.482h-50.618c-2.61,0-4.732,2.122-4.732,4.732v50.618c0,2.61,2.122,4.732,4.732,4.732h50.618     c2.61,0,4.732-2.122,4.732-4.732v-50.618C276.205,287.604,274.083,285.482,271.473,285.482z M261.075,311.705l-18.542,15.092     c-0.859,0.704-1.934,1.08-3.033,1.08c-0.178,0-0.357-0.009-0.535-0.028c-1.286-0.146-2.455-0.798-3.248-1.817l-5.215-6.666     c-1.638-2.089-1.267-5.112,0.822-6.746c2.089-1.643,5.117-1.267,6.746,0.822l2.197,2.807l14.745-11.999     c2.065-1.681,5.089-1.361,6.76,0.695C263.446,307.001,263.136,310.029,261.075,311.705z" />
+                                    <path
+                                        d="M411.381,110.226c-13.751,0-25.147-10.141-27.185-23.331h-66.983c-2.657,0-4.807-2.15-4.807-4.807     c0-2.657,2.15-4.807,4.807-4.807h66.626V10.87H199.497c-15.478,0-28.12,12.594-28.12,28.12v331.631     c0,15.478,12.642,28.12,28.12,28.12h255.104c15.527,0,28.169-12.642,28.169-28.12V110.226H411.381z M328.94,123.938h47.98     c2.657,0,4.807,2.15,4.807,4.807c0,2.657-2.15,4.807-4.807,4.807h-47.98c-2.657,0-4.807-2.15-4.807-4.807     C324.134,126.088,326.284,123.938,328.94,123.938z M285.819,340.833c0,7.91-6.436,14.346-14.346,14.346h-50.618     c-7.91,0-14.346-6.436-14.346-14.346v-50.618c0-7.91,6.436-14.346,14.346-14.346h50.618c7.91,0,14.346,6.436,14.346,14.346     V340.833z M285.819,235.779c0,7.91-6.436,14.346-14.346,14.346h-50.618c-7.91,0-14.346-6.436-14.346-14.346v-50.618     c0-7.91,6.436-14.346,14.346-14.346h50.618c7.91,0,14.346,6.436,14.346,14.346V235.779z M285.819,130.726     c0,7.91-6.436,14.346-14.346,14.346h-50.618c-7.91,0-14.346-6.436-14.346-14.346V80.108c0-7.91,6.436-14.346,14.346-14.346     h50.618c7.91,0,14.346,6.436,14.346,14.346V130.726z M429.21,343.114h-90.003c-2.657,0-4.807-2.15-4.807-4.807     s2.15-4.807,4.807-4.807h90.003c2.657,0,4.807,2.15,4.807,4.807S431.867,343.114,429.21,343.114z M451.203,296.462H317.214     c-2.657,0-4.807-2.15-4.807-4.807c0-2.657,2.15-4.807,4.807-4.807h133.989c2.657,0,4.807,2.15,4.807,4.807     C456.01,294.312,453.86,296.462,451.203,296.462z M334.4,233.798c0-2.657,2.15-4.807,4.807-4.807h90.003     c2.657,0,4.807,2.15,4.807,4.807c0,2.657-2.15,4.807-4.807,4.807h-90.003C336.55,238.605,334.4,236.455,334.4,233.798z      M451.203,191.949H317.214c-2.657,0-4.807-2.15-4.807-4.807c0-2.657,2.15-4.807,4.807-4.807h133.989     c2.657,0,4.807,2.15,4.807,4.807C456.01,189.799,453.86,191.949,451.203,191.949z" />
+                                </g>
+                            </g>
+                        </g>
+                        <g id="Layer_1" />
+                    </svg>
+                </div>
+                <div class="body">
+                    <div class="div-header-form">
+                        <h4>Evaluaciones</h4>
+                    </div>
+                    <div class="div-text-body">
+                        <span class="span">{{countTests.count}}</span>
+                    </div>
+                </div>
+            </div>
+        </a>
+
+    </div>
+</div>
+
+

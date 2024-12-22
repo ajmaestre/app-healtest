@@ -1,0 +1,72 @@
+<div [class]="page">
+    <div [class]="pageAdd">
+
+        <div class="data">
+
+            <div class="div-header-form">
+                <h4>Actividad</h4>
+                <div class="div-icon">
+                    <a type="button" (click)="closeModal()">
+                        <svg version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg"
+                            xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 212.982 212.982"
+                            style="enable-background:new 0 0 212.982 212.982;" xml:space="preserve">
+                            <g id="Close">
+                                <path style="fill-rule:evenodd;clip-rule:evenodd;" d="M131.804,106.491l75.936-75.936c6.99-6.99,6.99-18.323,0-25.312
+            c-6.99-6.99-18.322-6.99-25.312,0l-75.937,75.937L30.554,5.242c-6.99-6.99-18.322-6.99-25.312,0c-6.989,6.99-6.989,18.323,0,25.312
+            l75.937,75.936L5.242,182.427c-6.989,6.99-6.989,18.323,0,25.312c6.99,6.99,18.322,6.99,25.312,0l75.937-75.937l75.937,75.937
+            c6.989,6.99,18.322,6.99,25.312,0c6.99-6.99,6.99-18.322,0-25.312L131.804,106.491z" />
+                            </g>
+                            <g></g>
+                            <g></g>
+                            <g></g>
+                            <g></g>
+                            <g></g>
+                            <g></g>
+                            <g></g>
+                            <g></g>
+                            <g></g>
+                            <g></g>
+                            <g></g>
+                            <g></g>
+                            <g></g>
+                            <g></g>
+                            <g></g>
+                        </svg>
+                    </a>
+                </div>
+            </div>
+
+            <div class="div-sep">
+                <hr class="sep">
+            </div>
+
+            <div class="data-activity">
+                <div class="input"><span>Nombre:</span> <span>{{dataActivity.name}}</span></div>
+                <div class="input"><span>Fecha de creación:</span> <span>{{getDate(dataActivity)}}</span></div>
+                <div class="input"><span>Estado:</span> <span>{{dataActivity.state}}</span></div>
+            </div>
+            
+            <div class="div-first-data">
+                <div class="div-btn-panel">
+                    <div class="div-btn-table">
+                        <div *ngFor="let cells of numberCells; let i = index" class="div-list-cell">
+                            <option [class]="getInput(i)" value="i" (click)="selectCell(i)">{{cells}}</option>
+                        </div>
+                    </div>
+                </div>
+                <div class="div-btn-panel questions">
+                    <div class="div-vertical">
+                        <h4 class="h4">Lista de Palabras</h4>
+                        <div class="group-btn" *ngFor="let word of listWord; let i = index">
+                            <label for="">{{i+1}}.</label>
+                            <option class="input" value="i">{{word.question}}</option>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+
+        </div>
+
+    </div>
+</div>

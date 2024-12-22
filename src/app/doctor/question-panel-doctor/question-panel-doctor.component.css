@@ -1,0 +1,284 @@
+
+.page{
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    flex-direction: column;
+    margin: 0;
+    padding-top: 1.5rem;
+    padding-bottom: 1.5rem;
+    width: 52rem;
+    height: 100vh;
+}
+
+.div-header-form{
+    display: flex;
+    align-items: flex-start;
+    justify-content: center;
+    flex-direction: row;
+    width: 100%;
+    padding: 0;
+}
+
+.div-header-form h4{
+    font-weight: bold;
+    color: rgb(51, 51, 51);
+    font-size: .9rem;
+    padding: .2rem 0;
+    width: 100%;
+    text-align: left;
+    
+}
+
+.div-header-form h2{
+    font-weight: bold;
+    color: rgb(51, 51, 51);
+    font-size: 1.5rem;
+    padding: 1.5rem 0;
+    width: auto;
+    text-align: left;
+}
+
+.div-header-form .form{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: 100%;
+}
+
+.div-header-form .form .div-input{
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    width: 100%;
+    height: 100%;
+}
+
+.div-header-form .form .div-input .div-btn{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: row;
+    width: auto;
+    height: auto;
+    padding: 0;
+}
+
+.div-header-form .form .div-input .separator{
+    height: 2.5rem;
+    border-right: .15rem solid rgb(197, 197, 197);
+    padding-left: .5rem;
+}
+
+.div-header-form .form .div-input .div-btn .input{
+    width: 20rem;
+    height: 2.6rem;
+    margin: 0;
+    padding: 0 .5rem;
+    border: .1rem solid rgb(197, 197, 197);
+    border-radius: .2rem;
+}
+
+.div-header-form .form .div-input .div-btn a{
+    cursor: pointer;
+    transition: .5s;
+    margin-left: .5rem;
+    padding: .1rem;
+    border: .2rem solid #242932;
+    border-radius: .2rem;
+}
+
+.div-header-form .form .div-input .div-btn a svg{
+    fill: #242932;
+    width: 2rem;
+    height: 2rem;
+    margin: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: .5s;
+}
+
+.div-header-form .form .div-input .div-btn a:hover{
+    border: .2rem solid rgb(204, 163, 88);
+}
+
+.div-header-form .form .div-input .div-btn a:hover svg{
+    fill: rgb(204, 163, 88);
+}
+
+.div-projects{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: row;
+    flex-wrap: wrap;
+    height: 70vh;
+    width: inherit;
+}
+
+.div-projects a{
+    text-decoration: none;
+} 
+
+.div-project{
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    width: 15rem;
+    height: auto;
+    padding: .5rem;
+    margin: .5rem;
+    border: .15rem solid rgb(228, 227, 227);
+    cursor: pointer;
+    transition: .5s;
+    border-radius: .2rem;
+    box-shadow: .3rem .3rem .3rem rgb(233, 231, 231);
+}
+
+.div-project:hover{
+    background-color: rgb(204, 163, 88);
+}
+
+.div-project .div-icon{
+    width: 100%;
+    height: auto;
+    padding: .0;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    flex-direction: row;
+    margin: 0;
+}
+
+.div-project .div-icon a svg{
+    fill: #242932;
+    width: 1.2rem;
+    height: 1.2rem;
+    margin: 0 .1rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.div-project .div-icon a{
+    cursor: pointer;
+    transition: .5s;
+}
+
+.div-project .div-icon a:hover svg{
+    fill: white;
+}
+
+.div-project .card-content{
+    display: flex;
+    align-items: flex-start;
+    justify-content: center;
+    flex-direction: row;
+    width: 100%;
+}
+
+.div-project .div-project-image{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: auto;
+    height: 100%;
+    padding: .5rem;
+}
+
+.div-project:hover .div-project-image svg{
+    fill: #242932;
+}
+
+.div-project .div-project-image svg{
+    fill: rgb(204, 163, 88);
+    width: 5rem;
+    height: 100%;
+    margin: 0;
+}
+
+.div-project .body{
+    display: flex;
+    align-items: flex-start;
+    justify-content: flex-start;
+    flex-direction: column;
+    padding: .5rem .2rem;
+    width: 50%;
+    height: 100%;
+}
+
+.div-project .body .div-header-form h4{
+    text-align: left;
+    font-size: .75rem;
+}
+
+.div-project .body .div-text-body{
+    width: 100%;
+}
+
+.div-project .body .div-text-body p{
+    font-size: .7rem;
+    font-weight: 500;
+    color: #242932;
+    margin: 0;
+    text-align: left;
+}
+
+.div-project .body .div-text-body .span{
+    font-weight: bold;
+    text-align: center;
+    margin-bottom: .2rem;
+    color: #242932;
+    font-size: .7rem;
+}
+
+/* --------------------------------------------------PAGINACION-------------------------------------------------- */
+
+.div-btn-pagination{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: row;
+    flex-wrap: wrap;
+    margin: 0;
+    padding: 0;
+    width: auto;
+}
+
+.div-btn-pagination a{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-decoration: none;
+    cursor: pointer;
+    transition: .5s;
+    background: transparent;
+    margin: 0 1rem;
+    padding: 0;
+    width: auto;
+    height: auto;
+}
+
+.div-btn-pagination .left{
+    transform: rotate(-90deg);
+}
+
+.div-btn-pagination .right{
+    transform: rotate(90deg);
+}
+
+.div-btn-pagination a svg{
+    width: 2.5rem;
+    height: 4.5rem;
+    margin: 0;
+    transition: .5s;
+}
+
+.div-btn-pagination a:hover svg{
+    fill: rgb(204, 163, 88);
+}

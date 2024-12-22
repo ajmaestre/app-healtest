@@ -1,0 +1,190 @@
+
+.div-form-add{
+    position: fixed;
+    width: 100vw;
+    height: 100vh;
+    top: 0;
+    left: 0;
+    display: none;
+    align-items: center;
+    justify-content: center;
+    background: rgba(15, 15, 15, 0.6);
+}
+
+.page-add{
+    animation: login .5s linear 0s;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    margin: 0;
+    width: 40rem;
+    height: auto;
+    padding: 1.5rem 2rem;
+    background-color: rgb(255, 255, 255);
+    border: .1rem solid rgb(233, 231, 231);
+    border-radius: .2rem;
+    box-shadow: .3rem .3rem .3rem rgb(233, 231, 231);
+}
+
+.page-out{
+    animation: logout 1s linear 0s;
+}
+
+.div-header-form{
+    display: flex;
+    align-items: flex-start;
+    justify-content: center;
+    flex-direction: row;
+    width: 100%;
+    color: #242932;
+}
+
+.div-header-form h4{
+    font-weight: bold;
+    color: rgb(51, 51, 51);
+    font-size: 1rem;
+    padding: 0;
+    width: 100%;
+    text-align: left;
+}
+
+.div-icon{
+    width: 100%;
+    height: auto;
+    padding: .0;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    flex-direction: row;
+    margin: 0;
+}
+
+.div-icon svg{
+    fill: #242932;
+    width: 1.2rem;
+    height: 1.2rem;
+    margin: 0 .1rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.div-header-form .div-icon a{
+    cursor: pointer;
+    transition: .5s;
+}
+
+.div-header-form .div-icon a:hover svg{
+    fill: rgb(204, 163, 88);
+}
+
+.div-panel{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: row;
+    flex-wrap: wrap;
+    height: auto;
+    width: inherit;
+    margin: 2rem 0;
+}
+
+.div-panel a{
+    text-decoration: none;
+}
+
+.div-project{
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    width: 9rem;
+    height: 12rem;
+    padding: .5rem;
+    margin: .5rem;
+    border: .15rem solid rgb(228, 227, 227);
+    cursor: pointer;
+    transition: .5s;
+    border-radius: .2rem;
+    box-shadow: .3rem .3rem .3rem rgb(233, 231, 231);
+}
+
+.div-project:hover{
+    background-color: rgb(204, 163, 88);
+}
+
+.div-project .div-project-image{
+    width: auto;
+    height: 100%;
+    background-size: cover;
+    padding: .2rem;
+}
+
+.div-project:hover .div-project-image svg{
+    fill: #242932;
+}
+
+.div-project .div-project-image svg{
+    fill: rgb(204, 163, 88);
+    width: 5.5rem;
+    height: 5.5rem;
+}
+
+.div-project .body{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    padding: .2rem;
+    height: 100%;
+    width: auto;
+}
+
+.div-project .body .div-header-form{
+    font-weight: bold;
+    color: rgb(51, 51, 51);
+    font-size: 1rem;
+    padding: 0;
+    width: 100%;
+    text-align: center;
+}
+
+.div-panel .div-project .body .div-header-form h4{
+    text-align: center;
+    padding: 0;
+    margin-bottom: .5rem;
+    font-size: .9rem;
+}
+
+.div-panel .div-project .body .div-text-body{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    width: 100%;
+}
+
+.div-project .body .div-text-body p{
+    font-size: .8rem;
+    font-weight: 500;
+    color: #242932;
+    margin: .2rem 0;
+}
+
+.div-panel .div-project .body .div-text-body .span{
+    font-weight: bold;
+    text-align: center;
+    margin-bottom: .2rem;
+    color: #242932;
+    font-size: .8rem;
+}
+
+.show{
+    display: flex;
+}
+
+.hide{
+    display: none;
+}

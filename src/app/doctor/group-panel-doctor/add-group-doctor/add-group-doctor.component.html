@@ -1,0 +1,30 @@
+
+
+<div [class]="page">
+    <form [class]="pageAdd" [formGroup]="data">
+        <div class="div-header-form" *ngIf="!this.data.value.id">
+            <h4>Registrar Grupo</h4>
+        </div>
+        <div class="div-header-form" *ngIf="this.data.value.id">
+            <h4>Editar Grupo</h4>
+        </div>
+        <div class="div-first-data">
+            <input class="input id-hide" type="text" name="id" formControlName="id">
+            <input class="input" type="text" name="name" required placeholder="Nombre" formControlName="name">
+            <textarea class="input text-area" name="description" required placeholder="Descripción" formControlName="description">
+
+            </textarea>
+            <div [class]="divWarning" id="div-warning">
+                <label id="warning">{{message}}</label>
+            </div>
+            <hr class="hr">
+        </div>
+
+        <div class="group-button">
+            <div class="div-btn div-btn-next">
+                <input class="btn-next btn-prev" type="button" value="Cancelar" (click)="closeModal()">
+                <input class="btn-next" type="button" value="Registrar" (click)="sendData()">
+            </div>
+        </div>
+    </form>
+</div>

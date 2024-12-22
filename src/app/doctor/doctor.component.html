@@ -1,0 +1,28 @@
+
+<app-menu-panel-doctor></app-menu-panel-doctor>
+
+<div class="div-form">
+
+    <app-control-panel-doctor id="inicio"></app-control-panel-doctor>
+    
+    <app-group-panel-doctor id="groups" (openModalConfirm)="loadPageConfirm($event)"></app-group-panel-doctor>
+
+    <app-patient-panel-doctor id="patients" (openModalConfirm)="loadPageConfirm($event)"></app-patient-panel-doctor>
+
+    <app-resourse-panel-doctor id="resourses" (openModalConfirm)="loadPageConfirm($event)"></app-resourse-panel-doctor>
+
+    <app-question-panel-doctor id="questions" (openModalConfirm)="loadPageConfirm($event)"></app-question-panel-doctor>
+
+    <app-test-panel-doctor id="tests" (openModalConfirm)="loadPageConfirm($event)"></app-test-panel-doctor>
+
+    <app-activity-panel-doctor id="activities" (openModalConfirm)="loadPageConfirm($event)"></app-activity-panel-doctor>
+
+    <app-statistic-panel-doctor id="statistics"></app-statistic-panel-doctor>
+
+    <app-perfil-panel-doctor id="perfil"></app-perfil-panel-doctor>
+
+</div>
+
+<app-panel-confirm [page]="loadModalConfirm" [pageAdd]="loadConfirmAnim" [elementId]="getElementId" [typeElement]="getTypeElement" (closePage)="loadPageConfirm($event)"></app-panel-confirm>
+<app-password-panel></app-password-panel>
+

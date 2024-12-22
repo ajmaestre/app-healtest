@@ -1,0 +1,32 @@
+<div [class]="page">
+    <form [class]="pageAdd" [formGroup]="data">
+        <div class="div-header-form">
+            <h4>Registrar Paciente en el grupo {{dataGroup.name}}</h4>
+        </div>
+        <div class="div-first-data">
+            <input class="input id-hide" type="text" name="id" formControlName="id">
+            <input class="input" type="text" name="name" required placeholder="Nombres" formControlName="name">
+            <input class="input" type="text" name="lastname" required placeholder="Apellidos" formControlName="lastname">
+            <input class="input" type="text" name="group" required placeholder="Grupo" formControlName="group">
+            <input class="input" type="email" name="email" required
+                placeholder="Correo electrónico" formControlName="email">
+            <input class="input" type="text" name="username" required placeholder="Username" formControlName="username">
+            <input class="input" type="tel" name="telephone" required placeholder="Telefono" formControlName="telephone">
+            <input class="input" type="password" name="password" required
+                placeholder="Password" formControlName="password">
+            <input class="input" type="password" name="passwordConfirm" required
+                placeholder="Confirm Password" formControlName="passwordConfirm">
+            <div [class]="divWarning" id="div-warning">
+                <label id="warning">{{message}}</label>
+            </div>
+            <hr class="hr">
+        </div>
+
+        <div class="group-button">
+            <div class="div-btn div-btn-next">
+                <input class="btn-next btn-prev" type="button" value="Cancelar" (click)="closeModal()">
+                <input class="btn-next" type="button" value="Registrar" (click)="sendData()">
+            </div>
+        </div>
+    </form>
+</div>
