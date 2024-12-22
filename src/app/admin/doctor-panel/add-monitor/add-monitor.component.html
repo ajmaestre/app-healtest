@@ -1,0 +1,45 @@
+<div [class]="page">
+    <form [class]="pageAdd" [formGroup]="data">
+        <div class="div-header-form" *ngIf="!this.data.value.id">
+            <h4>Registrar Monitor</h4>
+        </div>
+        <div class="div-header-form" *ngIf="this.data.value.id">
+            <h4>Editar Monitor</h4>
+        </div>
+        <div class="div-first-data">
+            <input class="input id-hide" type="text" name="id" id="id" formControlName="id">
+            <input class="input" type="text" name="name" id="name" required placeholder="Nombres" formControlName="name">
+            <input class="input" type="text" name="lastname" id="lastname" required placeholder="Apellidos" formControlName="lastname">
+            <input class="input" type="email" name="email" id="email" required
+                placeholder="Correo electrónico" formControlName="email">
+            <input class="input" type="text" name="username" id="username" required placeholder="Username" formControlName="username">
+            <input class="input" type="tel" name="telephone" id="telephone" required placeholder="Telefono" formControlName="telephone">
+            <input class="input" type="password" name="password" id="password" required
+                placeholder="Password" formControlName="password" *ngIf="!this.data.value.id">
+            <input class="input" type="password" name="passwordConfirm" id="passwordConfirm" required
+                placeholder="Confirm Password" formControlName="passwordConfirm" *ngIf="!this.data.value.id">
+            <div class="div-button" *ngIf="this.data.value.id">
+                <input class="input" type="password" name="password" required placeholder="Password" formControlName="password">
+                <a type="button" (click)="changePassword(this.data.value.id)">
+                    <svg width="24" height="24" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                        <title>Cambiar contraseña</title>
+                        <path
+                            d="M18 19v-7a1 1 0 0 1 2 0v8a1 1 0 0 1-1 1H4a1 1 0 0 1-1-1V5a1 1 0 0 1 1-1h8a1 1 0 0 1 0 2H5v13h13zm1.293-15.707a1 1 0 0 1 1.414 1.414l-9.513 9.513a1 1 0 1 1-1.414-1.414l9.513-9.513z"
+                            fill-rule="nonzero" />
+                    </svg>
+                </a>
+            </div>
+            <div [class]="divWarning" id="div-warning">
+                <label id="warning">{{message}}</label>
+            </div>
+            <hr class="hr">
+        </div>
+
+        <div class="group-button">
+            <div class="div-btn div-btn-next">
+                <input class="btn-next btn-prev" type="button" value="Cancelar" (click)="closeModal()">
+                <input class="btn-next" type="button" value="Registrar" (click)="sendData()">
+            </div>
+        </div>
+    </form>
+</div>

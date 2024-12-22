@@ -1,0 +1,24 @@
+
+<app-menu></app-menu>
+
+<div class="div-form">
+
+    <app-admin-panel id="inicio" (openListGroup)="loadPageListGroup($event)"></app-admin-panel>
+
+    <app-doctor-panel id="monitores" (openModalConfirm)="loadPageConfirm($event)"></app-doctor-panel>
+
+    <app-patient-panel id="pacientes" (openModalConfirm)="loadPageConfirm($event)"></app-patient-panel>
+
+    <app-group-panel id="grupos" (openModalConfirm)="loadPageConfirm($event)"></app-group-panel>
+
+    <app-perfil-panel id="perfil"></app-perfil-panel>
+
+</div>
+
+<app-add-group></app-add-group>
+<app-panel-confirm [page]="loadModalConfirm" [pageAdd]="loadConfirmAnim" [elementId]="getElementId" [typeElement]="getTypeElement" (closePage)="loadPageConfirm($event)"></app-panel-confirm>
+<app-password-panel></app-password-panel>
+
+<app-group-list-panel [page]="loadModalGroup" [pageAdd]="loadGroupAnim" (closePage)="loadPageListGroup($event)"></app-group-list-panel>
+
+<app-group-data></app-group-data>

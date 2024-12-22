@@ -1,0 +1,148 @@
+
+.page{
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    flex-direction: column;
+    margin: 0;
+    padding-top: 1.5rem;
+    padding-bottom: 1.5rem;
+    width: 52rem;
+    height: 100vh;
+}
+
+.div-header-form{
+    display: flex;
+    align-items: flex-start;
+    justify-content: center;
+    flex-direction: column;
+    width: 100%;
+    color: #242932;
+}
+
+.div-header-form h4{
+    font-weight: bold;
+    color: rgb(51, 51, 51);
+    font-size: 1rem;
+    padding: 1rem 0;
+    width: 100%;
+    text-align: left;
+}
+
+.div-header-form h2{
+    font-weight: bold;
+    color: rgb(51, 51, 51);
+    font-size: 1.5rem;
+    padding: 1.5rem 0;
+    width: 100%;
+    text-align: left;
+}
+
+.div-panel{
+    /* display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: row;
+    flex-wrap: wrap; */
+    display: grid;
+    grid-template-columns: repeat(3, 12rem);
+    grid-template-rows: repeat(2, 14rem);
+    justify-content: center;
+    align-content: center;
+    height: 70vh;
+    width: inherit;
+}
+
+.div-panel a{
+    text-decoration: none;
+    width: 11rem;
+    height: 13rem;
+    margin: .5rem;
+    padding: 0;
+}
+
+.div-project{
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    padding: .5rem;
+    width: inherit;
+    height: inherit;
+    border: .15rem solid rgb(228, 227, 227);
+    cursor: pointer;
+    transition: .5s;
+    border-radius: .2rem;
+    box-shadow: .3rem .3rem .3rem rgb(233, 231, 231);
+}
+
+.div-project:hover{
+    background-color: rgb(204, 163, 88);
+}
+
+.div-project .div-project-image{
+    width: auto;
+    height: 100%;
+    background-size: cover;
+    padding: .2rem;
+}
+
+.div-project:hover .div-project-image svg{
+    fill: #242932;
+}
+
+.div-project .div-project-image svg{
+    fill: rgb(204, 163, 88);
+    width: 5.5rem;
+    height: 5.5rem;
+}
+
+.div-project .body{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    padding: .2rem;
+    height: 100%;
+    width: auto;
+}
+
+.div-project .body .div-header-form{
+    font-weight: bold;
+    color: rgb(51, 51, 51);
+    font-size: 1rem;
+    padding: 0;
+    width: 100%;
+    text-align: center;
+}
+
+.div-panel .div-project .body .div-header-form h4{
+    text-align: center;
+    padding: 0;
+    margin-bottom: .5rem;
+    font-size: .9rem;
+}
+
+.div-panel .div-project .body .div-text-body{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    width: 100%;
+}
+
+.div-project .body .div-text-body p{
+    font-size: .8rem;
+    font-weight: 500;
+    color: #242932;
+    margin: .2rem 0;
+}
+
+.div-panel .div-project .body .div-text-body .span{
+    font-weight: bold;
+    text-align: center;
+    margin-bottom: .2rem;
+    color: #242932;
+    font-size: .8rem;
+}

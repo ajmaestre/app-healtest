@@ -1,0 +1,371 @@
+
+.div-form-add{
+    position: fixed;
+    width: 100vw;
+    height: 100vh;
+    top: 0;
+    left: 0;
+    display: none;
+    align-items: center;
+    justify-content: center;
+    background: rgba(15, 15, 15, 0.6);
+}
+ 
+.page-add{
+    animation: login .5s linear 0s;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    margin: 0;
+    width: 45rem;
+    height: auto;
+    padding: 1.5rem 2rem;
+    background-color: rgb(255, 255, 255);
+    border: .1rem solid rgb(233, 231, 231);
+    border-radius: .2rem;
+    box-shadow: .3rem .3rem .3rem rgb(233, 231, 231);
+}
+
+.page-out{
+    animation: logout 1s linear 0s;
+}
+
+.div-header-form{
+    display: flex;
+    align-items: flex-start;
+    justify-content: center;
+    flex-direction: row;
+    width: 100%;
+    color: #242932;
+}
+
+.div-header-form h4{
+    font-weight: bold;
+    color: rgb(51, 51, 51);
+    font-size: 1rem;
+    padding: 0;
+    width: 100%;
+    text-align: left;
+}
+
+.div-header-form .form{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: 100%;
+    padding: 0 5rem;
+    margin: 1.5rem 0;
+}
+
+.div-header-form .form .div-input{
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    width: 100%;
+    height: 100%;
+}
+
+.div-header-form .form .div-input .div-btn{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: row;
+    width: auto;
+    height: auto;
+    padding: 0;
+}
+
+.div-header-form .form .div-input .separator{
+    height: 2rem;
+    border-right: .15rem solid rgb(197, 197, 197);
+    padding-left: .5rem;
+}
+
+.div-header-form .form .div-input .div-btn .input{
+    width: 20rem;
+    height: 2rem;
+    margin: 0;
+    padding: 0 .5rem;
+    border: .1rem solid rgb(197, 197, 197);
+    border-radius: .2rem;
+}
+
+.div-header-form .form .div-input .div-btn a{
+    cursor: pointer;
+    transition: .5s;
+    margin-left: .5rem;
+    padding: .1rem;
+    border: .2rem solid #242932;
+    border-radius: .2rem;
+}
+
+.div-header-form .form .div-input .div-btn a svg{
+    fill: #242932;
+    width: 1.5rem;
+    height: 1.5rem;
+    margin: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: .5s;
+}
+
+.div-header-form .form .div-input .div-btn a:hover{
+    border: .2rem solid rgb(204, 163, 88);
+}
+
+.div-header-form .form .div-input .div-btn a:hover svg{
+    fill: rgb(204, 163, 88);
+}
+
+.div-icon{
+    width: 100%;
+    height: auto;
+    padding: .0;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    flex-direction: row;
+    margin: 0;
+}
+
+.div-icon svg{
+    fill: #242932;
+    width: 1.2rem;
+    height: 1.2rem;
+    margin: 0 .1rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.div-header-form .div-icon a{
+    cursor: pointer;
+    transition: .5s;
+}
+
+.div-header-form .div-icon a:hover svg{
+    fill: rgb(204, 163, 88);
+}
+
+.div-first-data{
+    width: 100%;
+    height: auto;
+    margin: 0;
+}
+
+.div-first-data .div-icon{
+    width: auto;
+    height: auto;
+    padding: 0;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    margin: 0 .5rem;
+}
+
+.div-first-data .div-icon svg{
+    fill: rgb(204, 163, 88);
+    width: 4.5rem;
+    height: 4.5rem;
+    margin: 0;
+}
+
+ul{
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: row;
+    flex-wrap: wrap;
+}
+
+ul li{
+    list-style: none;
+    margin: 0;
+}
+
+.input{
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    height: 6rem;
+    width: 48%;
+    margin: .2rem;
+    padding: .5rem;
+    border: .1rem solid rgb(228, 227, 227);
+    box-shadow: .2rem .2rem .2rem rgb(233, 231, 231);
+}
+
+ul li .data{
+    display: flex;
+    align-items: flex-start;
+    justify-content: flex-start;
+    flex-direction: column;
+    height: auto;
+    width: 70%;
+    margin: 0;
+}
+
+ul li .data .group-list{
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    width: 100%;
+    height: 5rem;
+    margin: .5rem 0;
+    padding: .5rem 0;
+    border: .1rem solid rgb(228, 227, 227);
+}
+
+ul li span{
+    margin: .1rem;
+    font-size: .7rem;
+}
+
+ul li .title{
+    font-weight: bold;
+}
+
+ul li .info{
+    width: 10%;
+    height: 100%;
+    padding: 0;
+    display: flex;
+    align-items: flex-end;
+    justify-content: flex-end;
+    flex-direction: row;
+    margin: 0;
+}
+
+ul li .info a svg{
+    fill: #242932;
+    width: 1.2rem;
+    height: 1.2rem;
+    margin: 0 .1rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+ul li .info a{
+    cursor: pointer;
+    transition: .5s;
+}
+
+ul li .info a:hover svg{
+    fill: rgb(204, 163, 88);
+}
+
+.group-button{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    width: 100%;
+}
+
+.div-btn{
+    display: flex;
+    align-items: flex-end;
+    justify-content: flex-end;
+    flex-direction: row;
+    width: inherit;
+}
+
+.btn-next{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 10rem;
+    height: 2.4rem;
+    margin-top: .5rem;
+    padding: 0 2rem;
+    border: .1rem solid rgb(0, 0, 0);
+    background: #242932;;
+    color: white;
+    font-weight: bold;
+    font-size: .8rem;
+    border-radius: .2rem;
+    text-decoration: none;
+    text-align: center;
+    transition: .5s;
+}
+
+.btn-prev{
+    border: .1rem solid rgb(236, 236, 236);
+    background: rgb(236, 236, 236);
+    color: rgb(158, 158, 158);
+    margin-right: 1rem;
+}
+
+.btn-next:hover{
+    cursor: pointer;
+    color: #242932;
+    background-color: rgb(204, 163, 88);
+    border: .1rem solid rgb(204, 163, 88);
+}
+
+.btn-prev:hover{
+    cursor: pointer;
+    color: black;
+    background-color: rgb(204, 163, 88);
+    border: .1rem solid rgb(204, 163, 88);
+}
+
+.show{
+    display: flex;
+}
+
+.hide{
+    display: none;
+}
+
+/* --------------------------------------------------PAGINACION-------------------------------------------------- */
+
+.div-btn-pagination{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: row;
+    flex-wrap: wrap;
+    margin: 0;
+    padding: 0;
+    width: auto;
+}
+
+.div-btn-pagination a{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-decoration: none;
+    cursor: pointer;
+    transition: .5s;
+    background: transparent;
+    margin: 0 1rem;
+    padding: 0;
+    width: auto;
+    height: auto;
+}
+
+.div-btn-pagination .left{
+    transform: rotate(-90deg);
+}
+
+.div-btn-pagination .right{
+    transform: rotate(90deg);
+}
+
+.div-btn-pagination a svg{
+    width: 2.5rem;
+    height: 4.5rem;
+    margin: 0;
+    transition: .5s;
+}
+
+.div-btn-pagination a:hover svg{
+    fill: rgb(204, 163, 88);
+}
