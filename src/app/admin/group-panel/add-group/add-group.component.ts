@@ -2,10 +2,10 @@ import { NgFor, NgIf } from '@angular/common';
 import { Component, OnDestroy, OnInit } from '@angular/core';
 import { FormControl, FormGroup, FormsModule, ReactiveFormsModule, Validators } from '@angular/forms';
 import { Subscription } from 'rxjs';
-import { Group } from '../../interfaces/group';
-import { AdminService } from '../admin.service';
-import { User } from '../../interfaces/user';
-import { IsAuth } from '../../interfaces/isAuth';
+import { Group } from '../../../interfaces/group';
+import { User } from '../../../interfaces/user';
+import { IsAuth } from '../../../interfaces/isAuth';
+import { GroupPanelService } from '../group-panel.service';
 
 @Component({
   selector: 'app-add-group',
@@ -33,7 +33,7 @@ export class AddGroupComponent implements OnInit, OnDestroy{
   dataGroup: Group = {};
   doctorList: User[] = [];
 
-  constructor(private adminService: AdminService){
+  constructor(private groupService: GroupPanelService){
     this.data = new FormGroup({
       id: new FormControl('', Validators.required),
       name: new FormControl('', Validators.required),
@@ -43,15 +43,13 @@ export class AddGroupComponent implements OnInit, OnDestroy{
   }
 
   ngOnInit(): void {
-    this.adminService.dataGroupSent$.subscribe((dataSended) => {
+    this.groupService.dataGroupSent$.subscribe((dataSended) => {
+      this.page = dataSended.page;
+      this.pageAdd = dataSended.pageAdd;
       if(dataSended.edit){
-        this.page = dataSended.page;
-        this.pageAdd = dataSended.pageAdd;
         this.chargeData(dataSended.group);
         this.data.get('user_id')?.disable();
       }else if(!dataSended.edit){
-        this.page = dataSended.page;
-        this.pageAdd = dataSended.pageAdd;
         this.data.get('user_id')?.enable();
         this.data.get('user_id')?.setValue('monitor');
       }
@@ -66,11 +64,11 @@ export class AddGroupComponent implements OnInit, OnDestroy{
       group: {},
       edit: false
     }
-    this.adminService.emitDataGroup(data);
+    this.groupService.emitDataGroup(data);
     setTimeout(() => {
       data.page = "div-form-add hide";
       data.pageAdd = "page-add page-out";
-      this.adminService.emitDataGroup(data);
+      this.groupService.emitDataGroup(data);
       this.clearForm();
     }, 500);
   }
@@ -86,7 +84,7 @@ export class AddGroupComponent implements OnInit, OnDestroy{
   saveGroup(){
     if(this.verifyFields()){
       this.dataGroup = this.data.value;
-      this.saveGroupSubscription = this.adminService.saveGroup(this.dataGroup).subscribe({
+      this.saveGroupSubscription = this.groupService.saveGroup(this.dataGroup).subscribe({
         next: (res: IsAuth) =>{
           if(res.response){
             this.setMessage('Grupo registrado');
@@ -108,7 +106,7 @@ export class AddGroupComponent implements OnInit, OnDestroy{
 
   updateGroup(){
     if(this.verifyFields()){
-      this.saveGroupSubscription = this.adminService.updateGroup(this.data.value.id, this.data.value).subscribe({
+      this.saveGroupSubscription = this.groupService.updateGroup(this.data.value.id, this.data.value).subscribe({
         next: (res: IsAuth) =>{
           if(res.response){
             this.setMessage('Grupo actualizado');
@@ -126,7 +124,7 @@ export class AddGroupComponent implements OnInit, OnDestroy{
   }
   
   getDoctors = () => {
-    this.doctorsSubscription = this.adminService.getMonitorList().subscribe({
+    this.doctorsSubscription = this.groupService.getMonitorList().subscribe({
       next: (res: User[]) =>{
         this.doctorList = res;
       },
@@ -146,7 +144,7 @@ export class AddGroupComponent implements OnInit, OnDestroy{
   }
 
   chargeListGroups = () => {
-    this.adminService.emitLoadGroupList();
+    this.groupService.emitLoadGroupList();
   }
 
   verifyFields = ():boolean => {

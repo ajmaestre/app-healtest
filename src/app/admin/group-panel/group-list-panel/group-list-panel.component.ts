@@ -1,12 +1,12 @@
 import { NgFor, NgIf } from '@angular/common';
-import { Component, EventEmitter, Input, OnDestroy, OnInit, Output } from '@angular/core';
-import { EmptyPageComponent } from '../../empty-page/empty-page.component';
+import { Component, OnDestroy, OnInit } from '@angular/core';
+import { EmptyPageComponent } from '../../../empty-page/empty-page.component';
 import { FormControl, FormGroup, FormsModule, ReactiveFormsModule, Validators } from '@angular/forms';
-import { SizeList } from '../../interfaces/sizeList';
-import { Group } from '../../interfaces/group';
+import { SizeList } from '../../../interfaces/sizeList';
+import { Group } from '../../../interfaces/group';
 import { Subscription } from 'rxjs';
-import { AdminService } from '../admin.service';
-import { User } from '../../interfaces/user';
+import { User } from '../../../interfaces/user';
+import { GroupPanelService } from '../group-panel.service';
 
 @Component({
   selector: 'app-group-list-panel',
@@ -23,7 +23,7 @@ import { User } from '../../interfaces/user';
 })
 export class GroupListPanelComponent implements OnInit, OnDestroy{
 
-  limit: number = 3;
+  limit: number = 4;
   pageSize: number = 0;
   countGroups: SizeList = { count: 0 };
 
@@ -31,29 +31,44 @@ export class GroupListPanelComponent implements OnInit, OnDestroy{
   newMessage: string = "No se encontraron registros almacenados en la base de datos.";
   groupList: Group[] = [];
 
-  @Input() page: string = '';
-  @Input() pageAdd: string = '';
-  @Output() closePage = new EventEmitter<{page: string, pageAdd: string}>();
+  page: string = '';
+  pageAdd: string = '';
 
   groupsSubscription!: Subscription;
   doctorsSubscription!: Subscription;
   countGroupSubscription!: Subscription;
   searchGroupSubscription!: Subscription;
+  countPatientsSubscription!: Subscription;
 
   data: FormGroup;
 
-  constructor(private adminService: AdminService){
+  constructor(private groupService: GroupPanelService){
     this.data = new FormGroup({
       search: new FormControl('', Validators.required),
     });
   }
 
   ngOnInit(): void {
-    this.getGroups(this.limit, this.pageSize);
+    this.groupService.listGroupPanelSent$.subscribe((dataSended) => {
+      this.page = dataSended.page;
+      this.pageAdd = dataSended.pageAdd;
+      this.getGroups(this.limit, this.pageSize);
+    })
+  }
+
+  openGroupDataPanel = (group: Group) => {
+    if(group.id){
+      const data = {
+        page: "div-form-add show", 
+        pageAdd: "page-add", 
+        id: group.id,
+      }
+      this.groupService.emitDataGroupPanel(data);
+    }
   }
 
   getGroups = (limit: number, page: number) => {
-    this.groupsSubscription = this.adminService.getGroups(limit, page).subscribe({
+    this.groupsSubscription = this.groupService.getGroups(limit, page).subscribe({
       next: (res: Group[]) =>{
         this.groupList = res;
         this.insertMonitorInList();
@@ -66,7 +81,7 @@ export class GroupListPanelComponent implements OnInit, OnDestroy{
   }
 
   getCountGroups = () => {
-    this.countGroupSubscription = this.adminService.getCountGroups().subscribe({
+    this.countGroupSubscription = this.groupService.getCountGroups().subscribe({
       next: (res: SizeList) =>{
         this.countGroups = res;
       },
@@ -77,7 +92,7 @@ export class GroupListPanelComponent implements OnInit, OnDestroy{
   }
 
   getGroupsByAll = () => {
-    this.searchGroupSubscription = this.adminService.getGroupsByAll(this.data.value.search, this.limit, this.pageSize).subscribe({
+    this.searchGroupSubscription = this.groupService.getGroupsByAll(this.data.value.search, this.limit, this.pageSize).subscribe({
       next: (res: Group[]) =>{
         this.groupList = res;
         this.insertMonitorInList();
@@ -90,13 +105,14 @@ export class GroupListPanelComponent implements OnInit, OnDestroy{
 
   insertMonitorInList = () => {
     this.groupList.forEach((element) => {
+      this.getNumPatients(element);
       this.getMonitorName(element);
     });
   }
 
   getMonitorName = (group: Group) => {
     if(group?.user_id){
-      this.doctorsSubscription = this.adminService.getMonitorById(group.user_id).subscribe({
+      this.doctorsSubscription = this.groupService.getMonitorById(group.user_id).subscribe({
         next: (res: User) =>{
           group.monitor_name = `${res.name} ${res.lastname}`;
         },
@@ -106,11 +122,32 @@ export class GroupListPanelComponent implements OnInit, OnDestroy{
       });
     }
   }
+
+  getNumPatients = (group: Group) => {
+    if(group?.id){
+      this.countPatientsSubscription = this.groupService.getCountPatientInGroup(group.id).subscribe({
+        next: (res: SizeList) =>{
+          group.num_patients = res.count;
+        },
+        error: (err: any) => {
+          console.log(err);
+        }
+      });
+    }
+  }
   
   closeModal = () => {
-    this.closePage.emit({page: "div-form-add show", pageAdd: "page-add page-out"});
+    const data = {
+      page: "div-form-add show", 
+      pageAdd: "page-add page-out", 
+    }
+    this.groupService.emitListGroupPanel(data);
     setTimeout(() => {
-      this.closePage.emit({page: "div-form-add hide", pageAdd: "page-add page-out"});
+      const data = {
+        page: "div-form-add hide", 
+        pageAdd: "page-add page-out", 
+      }
+      this.groupService.emitListGroupPanel(data);
     }, 500);
   }
 
@@ -119,22 +156,22 @@ export class GroupListPanelComponent implements OnInit, OnDestroy{
   }
 
   isPages = (): boolean => {
-    if(this.countGroups.count > 3){
+    if(this.countGroups.count > 4){
       return true;
     }
     return false;
   }
 
   nextPage = () => {
-    if(this.pageSize + 3 < this.countGroups?.count){
-      this.pageSize += 3; 
+    if(this.pageSize + 4 < this.countGroups?.count){
+      this.pageSize += 4; 
       this.getGroups(this.limit, this.pageSize);
     }
   }
 
   prePage = () => {
     if(this.pageSize > 0){
-      this.pageSize -= 3; 
+      this.pageSize -= 4; 
       this.getGroups(this.limit, this.pageSize);
     }
   }
@@ -144,6 +181,7 @@ export class GroupListPanelComponent implements OnInit, OnDestroy{
     this.countGroupSubscription?.unsubscribe();
     this.searchGroupSubscription?.unsubscribe();
     this.doctorsSubscription?.unsubscribe();
+    this.countPatientsSubscription?.unsubscribe();
   }
 
 }

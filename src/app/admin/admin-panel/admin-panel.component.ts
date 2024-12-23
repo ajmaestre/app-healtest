@@ -5,6 +5,7 @@ import { SizeList } from '../../interfaces/sizeList';
 import { DoctorPanelService } from '../doctor-panel/doctor-panel.service';
 import { DoctorListPanelComponent } from '../doctor-panel/doctor-list-panel/doctor-list-panel.component';
 import { PatientPanelService } from '../patient-panel/patient-panel.service';
+import { GroupPanelService } from '../group-panel/group-panel.service';
 
 @Component({
   selector: 'app-admin-panel',
@@ -22,12 +23,11 @@ export class AdminPanelComponent  implements OnInit, OnDestroy{
   countPatients: SizeList = { count: 0 };
   countGroups: SizeList = { count: 0 };
 
-  @Output() openListGroup = new EventEmitter<{page: string, pageAdd: string}>();
-
   constructor(
     private adminService: AdminService,
     private doctorService: DoctorPanelService,
     private patientService: PatientPanelService,
+    private groupService: GroupPanelService,
   ){}
 
   ngOnInit(): void {
@@ -53,7 +53,11 @@ export class AdminPanelComponent  implements OnInit, OnDestroy{
   }
 
   openPageListGroup = () => {
-    this.openListGroup.emit({page: "div-form-add show", pageAdd: "page-add"});
+    const data = {
+      page: "div-form-add show", 
+      pageAdd: "page-add", 
+    }
+    this.groupService.emitListGroupPanel(data);
   }
 
   openPageMonitor = () => {
@@ -83,7 +87,7 @@ export class AdminPanelComponent  implements OnInit, OnDestroy{
       group: {},
       edit: false
     }
-    this.adminService.emitDataGroup(data);
+    this.groupService.emitDataGroup(data);
   }
 
   getCountDoctors = () => {
@@ -109,7 +113,7 @@ export class AdminPanelComponent  implements OnInit, OnDestroy{
   }
 
   getCountGroups = () => {
-    this.countGroupSubscription = this.adminService.getCountGroups().subscribe({
+    this.countGroupSubscription = this.groupService.getCountGroups().subscribe({
       next: (res: SizeList) =>{
         this.countGroups = res;
       },

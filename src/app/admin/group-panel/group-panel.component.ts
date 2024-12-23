@@ -4,16 +4,22 @@ import { EmptyPageComponent } from '../../empty-page/empty-page.component';
 import { FormControl, FormGroup, FormsModule, ReactiveFormsModule, Validators } from '@angular/forms';
 import { Group } from '../../interfaces/group';
 import { Subscription } from 'rxjs';
-import { AdminService } from '../admin.service';
 import { SizeList } from '../../interfaces/sizeList';
 import { User } from '../../interfaces/user';
 import { PanelConfirmService } from '../../panel-confirm/panel-confirm.service';
+import { GroupPanelService } from './group-panel.service';
+import { AddGroupComponent } from './add-group/add-group.component';
+import { GroupListPanelComponent } from './group-list-panel/group-list-panel.component';
+import { GroupDataComponent } from './group-data/group-data.component';
 
 @Component({
   selector: 'app-group-panel',
   standalone: true,
   imports: [
     FormsModule,
+    AddGroupComponent,
+    GroupListPanelComponent,
+    GroupDataComponent,
     ReactiveFormsModule,
     EmptyPageComponent,
     NgFor,
@@ -42,14 +48,14 @@ export class GroupPanelComponent implements OnInit, OnDestroy{
   countPatientsSubscription!: Subscription;
   searchGroupSubscription!: Subscription;
   
-  constructor(private adminService: AdminService, private confirmService: PanelConfirmService){
+  constructor(private groupService: GroupPanelService, private confirmService: PanelConfirmService){
     this.data = new FormGroup({
       search: new FormControl('', Validators.required),
     });
   }
 
   ngOnInit(): void {
-    this.adminService.listGroupLoaded$.subscribe(() => {
+    this.groupService.listGroupLoaded$.subscribe(() => {
       this.getGroups(this.limit, this.page);
     });
     this.confirmService.listGroupLoaded$.subscribe(() => {
@@ -70,7 +76,7 @@ export class GroupPanelComponent implements OnInit, OnDestroy{
       group: group,
       edit: true
     }
-    this.adminService.emitDataGroup(data);
+    this.groupService.emitDataGroup(data);
   }
 
   openModalAddGroup = () => {
@@ -80,7 +86,7 @@ export class GroupPanelComponent implements OnInit, OnDestroy{
       group: {},
       edit: false
     }
-    this.adminService.emitDataGroup(data);
+    this.groupService.emitDataGroup(data);
   }
 
   openGroupDataPanel = (group: Group) => {
@@ -90,12 +96,12 @@ export class GroupPanelComponent implements OnInit, OnDestroy{
         pageAdd: "page-add", 
         id: group.id,
       }
-      this.adminService.emitDataGroupPanel(data);
+      this.groupService.emitDataGroupPanel(data);
     }
   }
 
   getGroups = (limit: number, page: number) => {
-    this.groupsSubscription = this.adminService.getGroups(limit, page).subscribe({
+    this.groupsSubscription = this.groupService.getGroups(limit, page).subscribe({
       next: (res: Group[]) =>{
         this.groupList = res;
         this.insertMonitorInList();
@@ -109,7 +115,7 @@ export class GroupPanelComponent implements OnInit, OnDestroy{
   }
 
   getCountGroups = () => {
-    this.countGroupSubscription = this.adminService.getCountGroups().subscribe({
+    this.countGroupSubscription = this.groupService.getCountGroups().subscribe({
       next: (res: SizeList) =>{
         this.countGroups = res;
       },
@@ -120,7 +126,7 @@ export class GroupPanelComponent implements OnInit, OnDestroy{
   }
 
   getGroupsByAll = () => {
-    this.searchGroupSubscription = this.adminService.getGroupsByAll(this.data.value.search, this.limit, this.page).subscribe({
+    this.searchGroupSubscription = this.groupService.getGroupsByAll(this.data.value.search, this.limit, this.page).subscribe({
       next: (res: Group[]) =>{
         this.groupList = res;
         this.insertMonitorInList();
@@ -140,7 +146,7 @@ export class GroupPanelComponent implements OnInit, OnDestroy{
 
   getNumPatients = (group: Group) => {
     if(group?.id){
-      this.countPatientsSubscription = this.adminService.getCountPatientInGroup(group.id).subscribe({
+      this.countPatientsSubscription = this.groupService.getCountPatientInGroup(group.id).subscribe({
         next: (res: SizeList) =>{
           group.num_patients = res.count;
         },
@@ -159,7 +165,7 @@ export class GroupPanelComponent implements OnInit, OnDestroy{
 
   getMonitorName = (group: Group) => {
     if(group?.user_id){
-      this.nameMonitorSubscription = this.adminService.getMonitorById(group.user_id).subscribe({
+      this.nameMonitorSubscription = this.groupService.getMonitorById(group.user_id).subscribe({
         next: (res: User) =>{
           group.monitor_name = `${res.name} ${res.lastname}`;
         },
