@@ -15,7 +15,6 @@
           "options": {
             "outputPath": "dist/app-healtest",
             "index": "src/index.html",
-            "baseHref": "/app-healtest/",
             "browser": "src/main.ts",
             "polyfills": [
               "zone.js"
@@ -95,9 +94,6 @@
             ],
             "scripts": []
           }
-        },
-        "deploy": {
-          "builder": "angular-cli-ghpages:deploy"
         }
       }
     }
