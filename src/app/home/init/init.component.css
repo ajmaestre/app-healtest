@@ -59,17 +59,17 @@
     overflow: hidden;
 }
 
-.div-anim{
-    width: 1rem;
+/* .div-anim{
+    width: 10rem;
     height: 4rem;
     position: absolute;
     top: -1rem;
-    background-color: rgba(36, 41, 50, .8);
+    background-color: rgba(36, 41, 50, .8) linear-gradient(to left, blue, red, yellow);
     opacity: .8;
     border: none;
     box-shadow: .2rem .3rem .1rem rgba(36, 41, 50, .7);
     animation: rot 3s infinite 2s;
-}
+} */
 
 .div-home .div-button a{
     padding: 0 2rem;
@@ -91,6 +91,7 @@
     width: 20rem;
     height: 2.4rem;
     box-shadow: .3rem .3rem .3rem rgb(233, 231, 231);
+    /* animation: rot 3s infinite 2s; */
 }
 
 .div-home .div-button a:hover{
@@ -140,9 +141,9 @@
 
 @keyframes rot {
     to{
-        transform: translateX(0) rotate(15deg);
+        background-color: rgb(254, 163, 88);
     }
     from{
-        transform: translateX(20rem) rotate(15deg);
+        background-color: rgb(255, 144, 59);
     }
 }
