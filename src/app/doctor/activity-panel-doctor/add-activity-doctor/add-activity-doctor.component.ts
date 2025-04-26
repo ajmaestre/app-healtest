@@ -56,6 +56,16 @@ export class AddActivityDoctorComponent implements OnInit, OnDestroy{
     this.activityService.emitDataSoup(data);
   }
 
+  openModalAddTask = () => {
+    const data = {
+      page: "div-form-add show", 
+      pageAdd: "page-add", 
+      task: {},
+      edit: false
+    }
+    this.activityService.emitDataTask(data);
+  }
+
   ngOnDestroy(): void {}
 
 }

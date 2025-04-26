@@ -1,4 +1,5 @@
 import { Crucigram } from "./crucigram";
+import { Task } from "./task";
 
 export interface Activity{
 
@@ -15,6 +16,8 @@ export interface Activity{
     verticals?: Crucigram[];
 
     horizontals?: Crucigram[];
+
+    task?: Task;
 
     state?: string;
 

@@ -8,6 +8,7 @@ import { PatientPanelDoctorService } from '../patient-panel-doctor.service';
 import { ActivityListDoctorComponent } from '../activity-list-doctor/activity-list-doctor.component';
 import { TestListDoctorComponent } from '../test-list-doctor/test-list-doctor.component';
 import { TestDataDoctorComponent } from '../test-data-doctor/test-data-doctor.component';
+import { StatsComponent } from './stats/stats.component';
 
 @Component({
   selector: 'app-patient-data-panel-doctor',
@@ -17,6 +18,7 @@ import { TestDataDoctorComponent } from '../test-data-doctor/test-data-doctor.co
     TestListDoctorComponent,
     ActivityListDoctorComponent,
     TestDataDoctorComponent,
+    StatsComponent,
     NgIf,
     NgFor,
   ],

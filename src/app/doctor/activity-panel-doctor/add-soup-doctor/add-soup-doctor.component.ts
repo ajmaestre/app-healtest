@@ -183,7 +183,7 @@ export class AddSoupDoctorComponent implements OnInit, OnDestroy{
       for(let i = 0; i < cells.length; i++){
         let letter: string = cells.at(i).value;
         letter = letter.toLowerCase();
-        if(value == letter && indexArray.length == 0 && cells.at(i+1).value == word[ind+1]){
+        if(value == letter && indexArray.length == 0 && cells.at(i+1)?.value == word[ind+1]){
           indexArray.push(i);
           break;
         }else if(value == letter && indexArray[indexArray.length-1] + 1 == i){
@@ -278,7 +278,7 @@ export class AddSoupDoctorComponent implements OnInit, OnDestroy{
   saveSoup(){
     this.data.get('type')?.setValue('soup');
     if(this.verifyFields()){
-      if(this.verifyQuestions()){
+      if(!this.verifyQuestions()){
         this.fillTable();
         this.dataActivity.id = this.data.get('id')?.value;
         this.dataActivity.name = this.data.get('name')?.value;
@@ -310,7 +310,7 @@ export class AddSoupDoctorComponent implements OnInit, OnDestroy{
 
   updateSoup(){
     if(this.verifyFields()){
-      if(this.verifyQuestions()){
+      if(!this.verifyQuestions()){
         this.dataActivity.id = this.data.get('id')?.value;
         this.dataActivity.name = this.data.get('name')?.value;
         this.dataActivity.type = this.data.get('type')?.value;
@@ -448,9 +448,9 @@ export class AddSoupDoctorComponent implements OnInit, OnDestroy{
   }
 
   verifyQuestions = ():boolean => {
-    const isVer = this.listVertical.filter((value, index) => value.question?.length != 0);
-    const isHor = this.listHorizontal.filter((value, index) => value.question?.length != 0);
-    if(isVer.length + isHor.length == 10){
+    const isVer = this.listVertical.filter((value, index) => value.question?.length);
+    const isHor = this.listHorizontal.filter((value, index) => value.question?.length);
+    if(isVer.length + isHor.length < 10){
       return true;
     }
     return false;

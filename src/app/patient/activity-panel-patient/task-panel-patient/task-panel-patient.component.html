@@ -1,0 +1,185 @@
+<div [class]="page">
+    <div [class]="pageAdd">
+
+        <div class="data">
+
+            <div class="div-header-form">
+                <h4>Tarea</h4>
+                <div class="div-icon">
+                    <a type="button" (click)="closeModal()">
+                        <svg version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg"
+                            xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 212.982 212.982"
+                            style="enable-background:new 0 0 212.982 212.982;" xml:space="preserve">
+                            <g id="Close">
+                                <path style="fill-rule:evenodd;clip-rule:evenodd;" d="M131.804,106.491l75.936-75.936c6.99-6.99,6.99-18.323,0-25.312
+            c-6.99-6.99-18.322-6.99-25.312,0l-75.937,75.937L30.554,5.242c-6.99-6.99-18.322-6.99-25.312,0c-6.989,6.99-6.989,18.323,0,25.312
+            l75.937,75.936L5.242,182.427c-6.989,6.99-6.989,18.323,0,25.312c6.99,6.99,18.322,6.99,25.312,0l75.937-75.937l75.937,75.937
+            c6.989,6.99,18.322,6.99,25.312,0c6.99-6.99,6.99-18.322,0-25.312L131.804,106.491z" />
+                            </g>
+                            <g></g>
+                            <g></g>
+                            <g></g>
+                            <g></g>
+                            <g></g>
+                            <g></g>
+                            <g></g>
+                            <g></g>
+                            <g></g>
+                            <g></g>
+                            <g></g>
+                            <g></g>
+                            <g></g>
+                            <g></g>
+                            <g></g>
+                        </svg>
+                    </a>
+                </div>
+            </div>
+
+            <div class="div-sep">
+                <hr class="sep">
+            </div>
+
+            <div class="data-activity">
+                <div class="input"><span>Nombre:</span> <span>{{dataActivity.name}}</span></div>
+                <div class="input"><span>Fecha de creación:</span> <span>{{getDate(dataActivity)}}</span></div>
+                <div class="input"><span>Estado:</span> <span>{{dataActivity.state}}</span></div>
+            </div>
+            
+            <form>
+                <div class="div-first-data">
+                    <div class="group-div">
+                        <div class="group-btn">
+                            <div class="input title-task"><span>Descripcion</span></div>
+                            <p class="input text-area">
+                                {{dataTask.description}}
+                            </p>
+                            <div class="input file-name" *ngIf="!dataResourse.name"><span>Archivo: No hay archivo</span></div>
+                            <div class="input file-name" *ngIf="dataResourse.name"><span>Archivo: {{dataResourse.name}}</span></div>
+                        </div>
+                        <div class="div-img">
+                            <div class="div-project">
+                                <div class="div-project-image">
+                                    <svg version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg"
+                                        xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 241.629 241.629"
+                                        style="enable-background:new 0 0 241.629 241.629;" xml:space="preserve">
+                                        <g id="Save">
+                                            <path style="fill-rule:evenodd;clip-rule:evenodd;" d="M120.815,80.543h62.644V35.797h-62.644V80.543z M58.17,241.629h125.289
+                v-107.39H58.17V241.629z M237.154,73.828l0-73.828v40.272L198.374,0H30.328v0.023c-2.032-0.014-4.174-0.022-6.464-0.022
+                c-10.708,0-19.39,9.015-19.39,20.136v201.357c0,11.12,8.682,20.135,19.39,20.135c2.508,0,4.644-0.028,6.464-0.108v0.107h9.944
+                v-4.795c0.536-2.667,0-6.765,0-13.103v-89.492c0-13.846,4.886-17.898,17.898-17.898h125.289c13.292,0,17.898,4.612,17.898,17.898
+                v107.39h9.944v-0.119c1.838,0.123,3.972,0.119,6.462,0.119c10.71,0,19.391-9.016,19.391-20.135V73.831
+                C237.154,73.83,237.154,73.829,237.154,73.828z M201.358,71.594c0,13.566-4.606,17.898-17.898,17.898H67.119
+                c-13.291,0-17.897-4.891-17.897-17.898V44.747c0-13.567,4.605-17.898,17.897-17.898h116.34c13.572,0,17.898,4.332,17.898,17.898
+                V71.594z" />
+                                        </g>
+                                        <g>
+                                        </g>
+                                        <g>
+                                        </g>
+                                        <g>
+                                        </g>
+                                        <g>
+                                        </g>
+                                        <g>
+                                        </g>
+                                        <g>
+                                        </g>
+                                        <g>
+                                        </g>
+                                        <g>
+                                        </g>
+                                        <g>
+                                        </g>
+                                        <g>
+                                        </g>
+                                        <g>
+                                        </g>
+                                        <g>
+                                        </g>
+                                        <g>
+                                        </g>
+                                        <g>
+                                        </g>
+                                        <g>
+                                        </g>
+                                    </svg>
+                                </div>
+                                <div class="div-btn">
+                                    <div class="div-upload">
+                                        <svg width="24" height="24" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                                            <title>Subir archivo</title>
+                                            <path
+                                                d="M18 19v-7a1 1 0 0 1 2 0v8a1 1 0 0 1-1 1H4a1 1 0 0 1-1-1V5a1 1 0 0 1 1-1h8a1 1 0 0 1 0 2H5v13h13zm1.293-15.707a1 1 0 0 1 1.414 1.414l-9.513 9.513a1 1 0 1 1-1.414-1.414l9.513-9.513z"
+                                                fill-rule="nonzero" />
+                                        </svg>
+                                        <div class="file-box">
+                                            <input type="file" name="file-res" aria-label="Cambiar recurso"
+                                                (change)="onLoad($event)">
+                                        </div>
+                                    </div>
+                                    <div class="div-download">
+                                        <a type="button" (click)="download()">
+                                            <svg version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg"
+                                                xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 16 16"
+                                                style="enable-background:new 0 0 16 16;" xml:space="preserve">
+                                                <title>Ver archivo</title>
+                                                <g>
+                                                    <circle cx="8" cy="7.99" r="1" />
+                                                    <path d="M8,2.981c-5.003,0-8,5.009-8,5.009s2.985,5.029,8,5.029s8-5.029,8-5.029S13.003,2.981,8,2.981z
+                     M8,10.99c-1.657,0-3-1.343-3-3s1.343-3,3-3s3,1.343,3,3S9.657,10.99,8,10.99z" />
+                                                </g>
+                                                <g>
+                                                </g>
+                                                <g>
+                                                </g>
+                                                <g>
+                                                </g>
+                                                <g>
+                                                </g>
+                                                <g>
+                                                </g>
+                                                <g>
+                                                </g>
+                                                <g>
+                                                </g>
+                                                <g>
+                                                </g>
+                                                <g>
+                                                </g>
+                                                <g>
+                                                </g>
+                                                <g>
+                                                </g>
+                                                <g>
+                                                </g>
+                                                <g>
+                                                </g>
+                                                <g>
+                                                </g>
+                                                <g>
+                                                </g>
+                                            </svg>
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div [class]="divWarning" id="div-warning">
+                        <label id="warning">{{message}}</label>
+                    </div>
+                </div>
+                <hr class="hr">
+                <div class="group-button">
+                    <div class="div-btn div-btn-next">
+                        <input class="btn-next btn-prev" type="button" value="Cancelar" (click)="closeModal()">
+                        <input class="btn-next" type="button" value="Registrar" (click)="saveResourse()">
+                    </div>
+                </div>
+            </form>
+
+        </div>
+
+    </div>
+</div>

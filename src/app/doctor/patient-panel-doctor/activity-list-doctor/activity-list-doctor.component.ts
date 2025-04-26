@@ -9,6 +9,7 @@ import { PatientPanelDoctorService } from '../patient-panel-doctor.service';
 import { Response } from '../../../interfaces/response';
 import { ActivityDataDoctorComponent } from '../activity-data-doctor/activity-data-doctor.component';
 import { SoupDataDoctorComponent } from '../soup-data-doctor/soup-data-doctor.component';
+import { TaskDataDoctorComponent } from '../task-data-doctor/task-data-doctor.component';
 
 @Component({
   selector: 'app-activity-list-doctor',
@@ -19,6 +20,7 @@ import { SoupDataDoctorComponent } from '../soup-data-doctor/soup-data-doctor.co
     EmptyPageComponent,
     ActivityDataDoctorComponent,
     SoupDataDoctorComponent,
+    TaskDataDoctorComponent,
     NgFor,
     NgIf,
   ],
@@ -69,6 +71,8 @@ export class ActivityListDoctorComponent implements OnInit, OnDestroy{
       this.patientService.emitDataSoupPanel(data);
     }else if(activity.type == 'crucigrama'){
       this.patientService.emitDataActPanel(data);
+    }else if(activity.type == 'task'){
+      this.patientService.emitDataTaskPanel(data);
     }
   }
 

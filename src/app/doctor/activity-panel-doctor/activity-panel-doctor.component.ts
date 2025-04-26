@@ -12,6 +12,8 @@ import { AddCrucigramaDoctorComponent } from './add-crucigrama-doctor/add-crucig
 import { ActivityDataPanelDoctorComponent } from './activity-data-panel-doctor/activity-data-panel-doctor.component';
 import { GroupActivityAddDoctorComponent } from './group-activity-add-doctor/group-activity-add-doctor.component';
 import { AddSoupDoctorComponent } from './add-soup-doctor/add-soup-doctor.component';
+import { AddTaskDoctorComponent } from './add-task-doctor/add-task-doctor.component';
+import { TaskDataDoctorComponent } from './task-data-doctor/task-data-doctor.component';
 
 @Component({
   selector: 'app-activity-panel-doctor',
@@ -23,7 +25,9 @@ import { AddSoupDoctorComponent } from './add-soup-doctor/add-soup-doctor.compon
     AddActivityDoctorComponent,
     AddCrucigramaDoctorComponent,
     AddSoupDoctorComponent,
+    AddTaskDoctorComponent,
     ActivityDataPanelDoctorComponent,
+    TaskDataDoctorComponent,
     GroupActivityAddDoctorComponent,
     NgFor,
     NgIf,
@@ -91,6 +95,14 @@ export class ActivityPanelDoctorComponent implements OnInit, OnDestroy{
         edit: true
       }
       this.activityService.emitDataSoup(data);
+    }else if(activity.type == 'task'){
+      const data = {
+        page: "div-form-add show", 
+        pageAdd: "page-add", 
+        task: activity,
+        edit: true
+      }
+      this.activityService.emitDataTask(data);
     }
   }
 
@@ -103,13 +115,24 @@ export class ActivityPanelDoctorComponent implements OnInit, OnDestroy{
   }
 
   openActivityDataPanel = (activity: Activity) => {
-    if(activity.id){
-      const data = {
-        page: "div-form-add show", 
-        pageAdd: "page-add", 
-        activity: activity,
+    if(activity.type == 'task'){
+      if(activity.id){
+        const data = {
+          page: "div-form-add show", 
+          pageAdd: "page-add", 
+          task: activity,
+        }
+        this.activityService.emitDataTaskPanel(data);
       }
-      this.activityService.emitDataActivityPanel(data);
+    }else{
+      if(activity.id){
+        const data = {
+          page: "div-form-add show", 
+          pageAdd: "page-add", 
+          activity: activity,
+        }
+        this.activityService.emitDataActivityPanel(data);
+      }
     }
   }
 

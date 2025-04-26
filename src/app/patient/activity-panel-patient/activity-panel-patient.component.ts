@@ -10,6 +10,7 @@ import { Response } from '../../interfaces/response';
 import { ActivityResponsePatientComponent } from './activity-response-patient/activity-response-patient.component';
 import { CrucigramDataPanelComponent } from './crucigram-data-panel/crucigram-data-panel.component';
 import { SoupDataPanelComponent } from './soup-data-panel/soup-data-panel.component';
+import { TaskPanelPatientComponent } from './task-panel-patient/task-panel-patient.component';
 
 @Component({
   selector: 'app-activity-panel-patient',
@@ -21,6 +22,7 @@ import { SoupDataPanelComponent } from './soup-data-panel/soup-data-panel.compon
     ActivityResponsePatientComponent,
     CrucigramDataPanelComponent,
     SoupDataPanelComponent,
+    TaskPanelPatientComponent,
     NgFor,
     NgIf,
   ],
@@ -64,7 +66,9 @@ export class ActivityPanelPatientComponent implements OnInit, OnDestroy{
       pageAdd: "page-add", 
       activity: activity,
     }
-    if(activity.state == 'Pendiente'){
+    if(activity.type == 'task'){
+      this.activityService.emitDataActivityTask(data);
+    }else if(activity.state == 'Pendiente' && activity.type != 'task'){
       this.activityService.emitDataActivityPanel(data);
     }else if(activity.state == 'Terminada' && activity.type == 'crucigrama'){
       this.activityService.emitDataActivity(data);

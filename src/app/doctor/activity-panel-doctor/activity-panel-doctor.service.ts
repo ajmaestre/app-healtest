@@ -8,6 +8,8 @@ import { IsAuth } from '../../interfaces/isAuth';
 import { Crucigram } from '../../interfaces/crucigram';
 import { Group } from '../../interfaces/group';
 import { User } from '../../interfaces/user';
+import { TaskActivity } from '../../interfaces/taskActivity';
+import { Task } from '../../interfaces/task';
 
 @Injectable({
   providedIn: 'root'
@@ -25,8 +27,15 @@ export class ActivityPanelDoctorService {
   dataCrucigramaSent$ = this.dataCrucigrama.asObservable();
   private dataSoup = new BehaviorSubject<{page: string, pageAdd: string, soup: Activity, edit: boolean}>({page: "div-form-add hide", pageAdd: "page-add", soup: {}, edit: false});
   dataSoupSent$ = this.dataSoup.asObservable();
+  private dataTask = new BehaviorSubject<{page: string, pageAdd: string, task: Activity, edit: boolean}>({page: "div-form-add hide", pageAdd: "page-add", task: {}, edit: false});
+  dataTaskSent$ = this.dataTask.asObservable();
+
   private dataGroupAddPanel = new BehaviorSubject<{page: string, pageAdd: string, id: number}>({page: "div-form-add hide", pageAdd: "page-add", id: NaN});
   dataGroupAddPanelSent$ = this.dataGroupAddPanel.asObservable();
+  private dataTaskPanel = new BehaviorSubject<{page: string, pageAdd: string, task: Activity}>({page: "div-form-add hide", pageAdd: "page-add", task: {}});
+  dataTaskPanelSent$ = this.dataTaskPanel.asObservable();
+  private listGroupLoad = new BehaviorSubject<{page: string, pageAdd: string, id: number}>({page: "div-form-add hide", pageAdd: "page-add", id: NaN});
+  listGroupLoaded$ = this.listGroupLoad.asObservable();
   
 
   constructor(private http: HttpClient) { }
@@ -61,6 +70,18 @@ export class ActivityPanelDoctorService {
     });
   }
 
+  public saveTask(activity: TaskActivity): Observable<IsAuth>{
+    return this.http.post<IsAuth>(`${environment.BASE_URL}/activity/save-task`, activity, {
+      headers: new HttpHeaders({'x-access-token': `${this.getToken()}`})
+    });
+  }
+
+  public updateTask(id: number, activity: Task): Observable<IsAuth>{
+    return this.http.patch<IsAuth>(`${environment.BASE_URL}/activity/update-task/${id}`, activity, {
+      headers: new HttpHeaders({'x-access-token': `${this.getToken()}`})
+    });
+  }
+
   public updateActivity(id: number, activity: Activity): Observable<IsAuth>{
     return this.http.patch<IsAuth>(`${environment.BASE_URL}/activity/update/${id}`, activity, {
       headers: new HttpHeaders({'x-access-token': `${this.getToken()}`})
@@ -69,6 +90,12 @@ export class ActivityPanelDoctorService {
 
   public getCrucigrams(id: number): Observable<Crucigram[]>{
     return this.http.get<Crucigram[]>(`${environment.BASE_URL}/activity/cricigrams/${id}`, {
+      headers: new HttpHeaders({'x-access-token': `${this.getToken()}`})
+    });
+  }
+
+  public getTasks(id: number): Observable<Task>{
+    return this.http.get<Task>(`${environment.BASE_URL}/activity/tasks/${id}`, {
       headers: new HttpHeaders({'x-access-token': `${this.getToken()}`})
     });
   }
@@ -115,8 +142,20 @@ export class ActivityPanelDoctorService {
   emitDataSoup(data: {page: string, pageAdd: string, soup: Activity, edit: boolean}) {
     this.dataSoup.next(data);
   }
+
+  emitDataTask(data: {page: string, pageAdd: string, task: Activity, edit: boolean}) {
+    this.dataTask.next(data);
+  }
   
   emitDataGroupAddPanel(data: {page: string, pageAdd: string, id: number}) {
     this.dataGroupAddPanel.next(data);
+  }
+
+  emitDataTaskPanel(data: {page: string, pageAdd: string, task: Activity}) {
+    this.dataTaskPanel.next(data);
+  }
+
+  emitListGroupPanel(data: {page: string, pageAdd: string, id: number}) {
+    this.listGroupLoad.next(data);
   }
 }

@@ -1,0 +1,82 @@
+
+.div-projects{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: row;
+    flex-wrap: wrap;
+    height: 70vh;
+    width: inherit;
+}
+
+.div-project .card-content{
+    position: relative;
+    display: flex;
+    align-items: flex-start;
+    justify-content: center;
+    flex-direction: row;
+    width: 100%;
+    height: 100%;
+}
+
+.div-project .div-project-image{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: 100%;
+    padding: 0;
+}
+
+.div-project:hover .div-project-image .graph{
+    width: 13rem;
+    height: 13rem;
+    font-size: .7rem;
+}
+
+/* --------------------------------------------------PAGINACION-------------------------------------------------- */
+
+.div-btn-pagination{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: row;
+    flex-wrap: wrap;
+    margin: 0;
+    padding: 0;
+    width: auto;
+}
+
+.div-btn-pagination a{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-decoration: none;
+    cursor: pointer;
+    transition: .5s;
+    background: transparent;
+    margin: 0 1rem;
+    padding: 0;
+    width: auto;
+    height: auto;
+}
+
+.div-btn-pagination .left{
+    transform: rotate(-90deg);
+}
+
+.div-btn-pagination .right{
+    transform: rotate(90deg);
+}
+
+.div-btn-pagination a svg{
+    width: 2.5rem;
+    height: 4.5rem;
+    margin: 0;
+    transition: .5s;
+}
+
+.div-btn-pagination a:hover svg{
+    fill: rgb(204, 163, 88);
+}

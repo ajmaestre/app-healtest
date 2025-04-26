@@ -14,6 +14,9 @@ import { TestResponse } from '../../interfaces/testResponse';
 import { Response } from '../../interfaces/response';
 import { Activity } from '../../interfaces/activity';
 import { Crucigram } from '../../interfaces/crucigram';
+import { Task } from '../../interfaces/task';
+import { Resourse } from '../../interfaces/resourse';
+import { stateCount } from '../../interfaces/responseInterface';
 
 @Injectable({
   providedIn: 'root'
@@ -40,6 +43,9 @@ export class PatientPanelDoctorService {
   dataActPanelSent$ = this.dataActPanel.asObservable();
   private dataSoupPanel = new BehaviorSubject<{page: string, pageAdd: string, activity: Activity, idUser: number}>({page: "div-form-add hide", pageAdd: "page-add", activity: {}, idUser: NaN});
   dataSoupPanelSent$ = this.dataSoupPanel.asObservable();
+
+  private dataTaskPanel = new BehaviorSubject<{page: string, pageAdd: string, activity: Activity, idUser: number}>({page: "div-form-add hide", pageAdd: "page-add", activity: {}, idUser: NaN});
+  dataTaskPanelSent$ = this.dataTaskPanel.asObservable();
 
   constructor(private http: HttpClient, private router: Router) { }
   
@@ -140,6 +146,12 @@ export class PatientPanelDoctorService {
     });
   }
 
+  public getTasks(id: number): Observable<Task>{
+    return this.http.get<Task>(`${environment.BASE_URL}/activity/tasks/${id}`, {
+      headers: new HttpHeaders({'x-access-token': `${this.getToken()}`})
+    });
+  }
+
   public getResponses(user_id: number, test_id: number): Observable<TestResponse[]>{
     return this.http.get<TestResponse[]>(`${environment.BASE_URL}/result/list-result-bydoctor/${user_id}/${test_id}`, {
       headers: new HttpHeaders({'x-access-token': `${this.getToken()}`})
@@ -148,6 +160,19 @@ export class PatientPanelDoctorService {
 
   public getResponseList(user_id: number, activity_id: number): Observable<Crucigram[]>{
     return this.http.get<Crucigram[]>(`${environment.BASE_URL}/activity/cricigrams-bydoctor/${user_id}/${activity_id}`, {
+      headers: new HttpHeaders({'x-access-token': `${this.getToken()}`})
+    });
+  }
+
+  public getResponseTask(user_id: number, activity_id: number): Observable<Blob>{
+    return this.http.get(`${environment.BASE_URL}/activity/tasks-bydoctor/${user_id}/${activity_id}`, {
+      responseType: 'blob',
+      headers: new HttpHeaders({'x-access-token': `${this.getToken()}`})
+    });
+  }
+
+  public getResponseTaskData(user_id: number, activity_id: number): Observable<Resourse>{
+    return this.http.get<Resourse>(`${environment.BASE_URL}/activity/tasks-data-bydoctor/${user_id}/${activity_id}`, {
       headers: new HttpHeaders({'x-access-token': `${this.getToken()}`})
     });
   }
@@ -205,6 +230,24 @@ export class PatientPanelDoctorService {
       headers: new HttpHeaders({'x-access-token': `${this.getToken()}`})
     });
   }
+  
+  public getTestByPatient(id: number): Observable<stateCount[]>{
+    return this.http.get<stateCount[]>(`${environment.BASE_URL}/stat/test-bypatient/${id}`, {
+      headers: new HttpHeaders({'x-access-token': `${this.getToken()}`})
+    });
+  }
+
+  public getActByPatient(id: number): Observable<stateCount[]>{
+    return this.http.get<stateCount[]>(`${environment.BASE_URL}/stat/act-bypatient/${id}`, {
+      headers: new HttpHeaders({'x-access-token': `${this.getToken()}`})
+    });
+  }
+
+  public getTypeActByPatient(id: number): Observable<stateCount[]>{
+    return this.http.get<stateCount[]>(`${environment.BASE_URL}/stat/act-type-bypatient/${id}`, {
+      headers: new HttpHeaders({'x-access-token': `${this.getToken()}`})
+    });
+  }
 
   public getToken(): string{
     const tkn: string = localStorage.getItem('tkn') || '';
@@ -245,6 +288,10 @@ export class PatientPanelDoctorService {
 
   emitDataSoupPanel(data: {page: string, pageAdd: string, activity: Activity, idUser: number}) {
     this.dataSoupPanel.next(data);
+  }
+
+  emitDataTaskPanel(data: {page: string, pageAdd: string, activity: Activity, idUser: number}) {
+    this.dataTaskPanel.next(data);
   }
 
 }

@@ -120,7 +120,6 @@ export class ActivityDataPanelDoctorComponent implements OnInit, OnDestroy{
   }
 
   getTableFilled(word: string, answer: string, indexLetter: number, position: string){
-    console.log(word)
     const indexArray: number[] = [];
     word = word.toLowerCase();
     word.split('').forEach((value, ind) => {

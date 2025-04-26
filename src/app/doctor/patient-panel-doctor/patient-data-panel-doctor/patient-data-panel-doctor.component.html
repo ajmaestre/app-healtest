@@ -35,55 +35,62 @@
                     </a>
                 </div>
             </div>
+
             <div class="div-sep">
                 <hr class="sep">
             </div>
+
             <div class="body">
-                <div class="div-header groupTitle" *ngIf="dataUser?.id">
-                    <div class="div-info input">
-                        <h4 class="h4">Paciente: </h4>
-                        <span>{{dataUser.name}} {{dataUser.lastname}}</span>
-                    </div>
-                    <div class="div-info input">
-                        <h4 class="h4">Correo electrónico: </h4>
-                        <span>{{dataUser.email}}</span>
-                    </div>
-                    <div class="div-info input">
-                        <h4 class="h4">Grupo: </h4>
-                        <span *ngFor="let group of dataUser?.groups">{{group.name}}</span>
-                        <span *ngIf="!dataUser?.groups">Sin grupo</span>
-                        <div class="btn-group">
-                            <div class="div-btn">
-                                <a *ngIf="dataUser?.groups" type="button" (click)="openModalChangePatientInGroup(dataUser)">
-                                    <svg width="24" height="24" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                                        <title>Cambiar grupo</title>
-                                        <path d="M18 19v-7a1 1 0 0 1 2 0v8a1 1 0 0 1-1 1H4a1 1 0 0 1-1-1V5a1 1 0 0 1 1-1h8a1 1 0 0 1 0 2H5v13h13zm1.293-15.707a1 1 0 0 1 1.414 1.414l-9.513 9.513a1 1 0 1 1-1.414-1.414l9.513-9.513z" fill-rule="nonzero"/>
-                                    </svg>
-                                </a>
+                <div class="patient-data">
+                    <div class="div-header groupTitle" *ngIf="dataUser?.id">
+                        <div class="div-info input">
+                            <h4 class="h4">Paciente: </h4>
+                            <span>{{dataUser.name}} {{dataUser.lastname}}</span>
+                        </div>
+                        <div class="div-info input">
+                            <h4 class="h4">Correo electrónico: </h4>
+                            <span>{{dataUser.email}}</span>
+                        </div>
+                        <div class="div-info input">
+                            <h4 class="h4">Grupo: </h4>
+                            <span *ngFor="let group of dataUser?.groups">{{group.name}}</span>
+                            <span *ngIf="!dataUser?.groups">Sin grupo</span>
+                            <div class="btn-group">
+                                <div class="div-btn">
+                                    <a *ngIf="dataUser?.groups" type="button" (click)="openModalChangePatientInGroup(dataUser)">
+                                        <svg width="24" height="24" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                                            <title>Cambiar grupo</title>
+                                            <path d="M18 19v-7a1 1 0 0 1 2 0v8a1 1 0 0 1-1 1H4a1 1 0 0 1-1-1V5a1 1 0 0 1 1-1h8a1 1 0 0 1 0 2H5v13h13zm1.293-15.707a1 1 0 0 1 1.414 1.414l-9.513 9.513a1 1 0 1 1-1.414-1.414l9.513-9.513z" fill-rule="nonzero"/>
+                                        </svg>
+                                    </a>
+                                </div>
                             </div>
                         </div>
+                        <div class="div-info input">
+                            <h4 class="h4">Monitor: </h4>
+                            <span *ngIf="dataUser?.monitor">{{dataUser.monitor}}</span>
+                            <span *ngIf="!dataUser?.monitor">Sin monitor</span>
+                        </div>
+                        <div class="div-info input">
+                            <h4 class="h4">Teléfono: </h4>
+                            <span>{{dataUser.telephone}}</span>
+                        </div>
+                        <div class="tabs input">
+                            <a (click)="getTests()" [class]="isSelect('test')">Evaluaciones</a>
+                            <a (click)="getActivities()" [class]="isSelect('act')">Actividades</a>
+                        </div>
                     </div>
-                    <div class="div-info input">
-                        <h4 class="h4">Monitor: </h4>
-                        <span *ngIf="dataUser?.monitor">{{dataUser.monitor}}</span>
-                        <span *ngIf="!dataUser?.monitor">Sin monitor</span>
+                    <div class="panel-tab">
+                        <div class="div-list-test" *ngIf="id">
+                            <app-test-list-doctor *ngIf="!changeTab" [idUser]="id"></app-test-list-doctor>
+                        </div>
+                        <div class="div-list-test" *ngIf="id">
+                            <app-activity-list-doctor *ngIf="changeTab" [idUser]="id"></app-activity-list-doctor>
+                        </div>
                     </div>
-                    <div class="div-info input">
-                        <h4 class="h4">Teléfono: </h4>
-                        <span>{{dataUser.telephone}}</span>
-                    </div>
-                    <div class="tabs input">
-                        <a (click)="getTests()" [class]="isSelect('test')">Evaluaciones</a>
-                        <a (click)="getActivities()" [class]="isSelect('act')">Actividades</a>
-                    </div>
-                </div>
-                <div class="panel-tab">
-                    <div class="div-list-test" *ngIf="id">
-                        <app-test-list-doctor *ngIf="!changeTab" [idUser]="id"></app-test-list-doctor>
-                    </div>
-                    <div class="div-list-test" *ngIf="id">
-                        <app-activity-list-doctor *ngIf="changeTab" [idUser]="id"></app-activity-list-doctor>
-                    </div>
+                </div> 
+                <div class="statistics" *ngIf="id">
+                    <app-stats [idUser]="id"></app-stats>
                 </div>
             </div>
         </div>
