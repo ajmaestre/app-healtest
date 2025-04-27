@@ -355,14 +355,3 @@
     font-size: .9rem;
 }
 
-.page-out{
-    animation: logout 1s linear 0s;
-}
-
-.show{
-    display: flex;
-}
-
-.hide{
-    display: none;
-}

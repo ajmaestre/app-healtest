@@ -1,4 +1,8 @@
 
+.page{
+    width: 60%;
+}
+
 .div-form-add{
     position: fixed;
     width: 100vw;
