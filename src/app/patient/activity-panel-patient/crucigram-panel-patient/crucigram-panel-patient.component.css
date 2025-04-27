@@ -28,7 +28,7 @@
 }
 
 .div-btn-panel{
-    width: 40%;
+    width: auto;
     height: auto;
     display: flex;
     align-items: flex-end;
