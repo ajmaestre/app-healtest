@@ -9,6 +9,9 @@ import { ActivityListDoctorComponent } from '../activity-list-doctor/activity-li
 import { TestListDoctorComponent } from '../test-list-doctor/test-list-doctor.component';
 import { TestDataDoctorComponent } from '../test-data-doctor/test-data-doctor.component';
 import { StatsComponent } from './stats/stats.component';
+import { ActivityDataDoctorComponent } from '../activity-data-doctor/activity-data-doctor.component';
+import { SoupDataDoctorComponent } from '../soup-data-doctor/soup-data-doctor.component';
+import { TaskDataDoctorComponent } from '../task-data-doctor/task-data-doctor.component';
 
 @Component({
   selector: 'app-patient-data-panel-doctor',
@@ -18,6 +21,9 @@ import { StatsComponent } from './stats/stats.component';
     TestListDoctorComponent,
     ActivityListDoctorComponent,
     TestDataDoctorComponent,
+    ActivityDataDoctorComponent,
+    SoupDataDoctorComponent,
+    TaskDataDoctorComponent,
     StatsComponent,
     NgIf,
     NgFor,
