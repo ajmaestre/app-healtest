@@ -38,7 +38,7 @@
 }
 
 .questions{
-    width: 40%;
+    width: 45%;
 }
 
 .div-vertical{
@@ -355,3 +355,10 @@
     font-size: .9rem;
 }
 
+.show{
+    display: flex;
+}
+
+.hide{
+    display: none;
+}

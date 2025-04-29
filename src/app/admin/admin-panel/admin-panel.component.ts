@@ -31,9 +31,7 @@ export class AdminPanelComponent  implements OnInit, OnDestroy{
   ){}
 
   ngOnInit(): void {
-    this.getCountDoctors();
-    this.getCountPatients();
-    this.getCountGroups();
+    this.reload();
   }
 
   openPageListDoctor = () => {
@@ -121,6 +119,12 @@ export class AdminPanelComponent  implements OnInit, OnDestroy{
         console.log(err);
       }
     });
+  }
+
+  reload = () => {
+    this.getCountDoctors();
+    this.getCountPatients();
+    this.getCountGroups();
   }
 
   ngOnDestroy(): void {

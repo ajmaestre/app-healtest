@@ -41,11 +41,7 @@ export class ControlPanelDoctorComponent implements OnInit, OnDestroy{
   ){}
   
   ngOnInit(): void {
-    this.getCountGroups();
-    this.getCountPatients();
-    this.getCountRes();
-    this.getCountQuests();
-    this.getCountTests();
+    this.reload();
   }
 
   openPageListGroup = () => {
@@ -181,7 +177,7 @@ export class ControlPanelDoctorComponent implements OnInit, OnDestroy{
       }
     });
   }
-
+  
   getCountTests = () => {
     this.countTestSubscription = this.testService.getCountTests().subscribe({
       next: (res: SizeList) =>{
@@ -191,6 +187,14 @@ export class ControlPanelDoctorComponent implements OnInit, OnDestroy{
         console.log(err);
       }
     });
+  }
+  
+  reload = () => {
+    this.getCountGroups();
+    this.getCountPatients();
+    this.getCountRes();
+    this.getCountQuests();
+    this.getCountTests();
   }
 
   ngOnDestroy(): void {

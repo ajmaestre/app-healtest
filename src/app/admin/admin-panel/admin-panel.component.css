@@ -15,7 +15,7 @@
     display: flex;
     align-items: flex-start;
     justify-content: center;
-    flex-direction: column;
+    flex-direction: row;
     width: 100%;
     color: #242932;
 }
@@ -34,8 +34,54 @@
     color: rgb(51, 51, 51);
     font-size: 1.5rem;
     padding: 1.5rem 0;
-    width: 100%;
+    width: 50%;
     text-align: left;
+}
+
+.div-reload{
+    width: 50%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+}
+
+.div-header-form .div-reload .div-btn{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: row;
+    width: auto;
+    height: auto;
+    padding: 0;
+}
+
+.div-header-form .div-reload a{
+    cursor: pointer;
+    transition: .5s;
+    margin-left: .5rem;
+    padding: .1rem;
+    border: .2rem solid #242932;
+    border-radius: .2rem;
+}
+
+.div-header-form .div-reload a svg{
+    fill: #242932;
+    width: 2rem;
+    height: 2rem;
+    margin: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: .5s;
+}
+
+.div-header-form .div-reload a:hover{
+    border: .2rem solid rgb(204, 163, 88);
+}
+
+.div-header-form .div-reload a:hover svg{
+    fill: rgb(204, 163, 88);
 }
 
 .div-panel{
