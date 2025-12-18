@@ -38,7 +38,7 @@ export class LoginComponent implements OnInit, OnDestroy{
 
   constructor(private router: Router, private loginService: LoginService){
     this.data = new FormGroup({
-      email: new FormControl('', Validators.required),
+      email: new FormControl(''),
       username: new FormControl('', Validators.required),
       password: new FormControl('', Validators.required)
     });
