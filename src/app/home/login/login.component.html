@@ -5,7 +5,7 @@
             <h4>Login</h4>
         </div>
         <div class="div-first-data">
-            <input class="input" type="email" name="Correo" id="email" required placeholder="Correo electrónico" formControlName="email">
+            <input *ngIf=false class="input" type="email" name="Correo" id="email" required placeholder="Correo electrónico" formControlName="email">
             <input class="input" type="text" name="Username" id="username" required placeholder="Username" formControlName="username">
             <input class="input" type="password" name="Password" id="password" required placeholder="Password" formControlName="password">
             <div [class]="divWarning" id="div-warning">
