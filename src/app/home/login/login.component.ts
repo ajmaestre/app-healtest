@@ -127,7 +127,7 @@ export class LoginComponent implements OnInit, OnDestroy{
   }
 
   verifyFields = ():boolean => {
-    if((this.data.value.email == '') || (this.data.value.username == '') || (this.data.value.password == '')){
+    if((this.data.value.username == '') || (this.data.value.password == '')){
       return false;
     }
     return true;
